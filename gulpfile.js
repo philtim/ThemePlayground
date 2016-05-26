@@ -32,7 +32,11 @@ var pathdir = {
     'sass': './src/sass/**/*.scss',
     'php': './src/**/*.php',
     'languages': './src/languages/**'
-}
+};
+
+var vendorLibs = {
+  'jQuery': 'bower_components/jQuery/dist/jquery.js'
+};
 
 // Translation related.
 var text_domain = 'VR';
@@ -71,29 +75,33 @@ const AUTOPREFIXER_BROWSERS = [
  *
  * Load gulp plugins and assing them semantic names.
  */
-var gulp = require('gulp'); // Gulp of-course
+var gulp = require('gulp');
 
-// CSS related plugins.
-var sass = require('gulp-sass'); // Gulp pluign for Sass compilation.
-var minifycss = require('gulp-uglifycss'); // Minifies CSS files.
-var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic.
-var mmq = require('gulp-merge-media-queries'); // Combine matching media queries into one media query definition.
+// SASS related plugins.
+var sass = require('gulp-sass');
+var minifycss = require('gulp-uglifycss');
+var autoprefixer = require('gulp-autoprefixer');
+var mmq = require('gulp-merge-media-queries');
 
 // JS related plugins.
-var concat = require('gulp-concat'); // Concatenates JS files
-var uglify = require('gulp-uglify'); // Minifies JS files
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 // Image realted plugins.
-var imagemin = require('gulp-imagemin'); // Minify PNG, JPEG, GIF and SVG images with imagemin.
+var imagemin = require('gulp-imagemin');
 
 // Utility related plugins.
-var rename = require('gulp-rename'); // Renames files E.g. style.css -> style.min.css
-var lineec = require('gulp-line-ending-corrector'); // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings)
-var filter = require('gulp-filter'); // Enables you to work on a subset of the original files by filtering them using globbing.
-var sourcemaps = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
-var browserSync = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
-var reload = browserSync.reload; // For manual browser reload.
+var rename = require('gulp-rename');
+var gutil = require('gulp-util');
+var lineec = require('gulp-line-ending-corrector');
+var filter = require('gulp-filter');
+var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 var del = require('del');
+var ftp = require('vinyl-ftp');
+var minimist = require('minimist');
+var args = minimist(process.argv.slice(2));
 
 /**
  * Task: `browser-sync`.
@@ -160,24 +168,24 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
 
-    .pipe(sourcemaps.write(pathdir.dist))
-        .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-        .pipe(gulp.dest(pathdir.dist))
+    .pipe(sourcemaps.write(pathdir.dist+'/styles/'))
+        .pipe(lineec())
+        .pipe(gulp.dest(pathdir.dist+'/styles/'))
 
-    .pipe(filter('**/*.css')) // Filtering stream to only css files
-        .pipe(mmq({ log: true })) // Merge Media Queries only for .min.css version.
+    .pipe(filter('**/*.css'))
+        .pipe(mmq({ log: true }))
 
-    .pipe(browserSync.stream()) // Reloads style.css if that is enqueued.
+    .pipe(browserSync.stream())
 
     .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss({
             maxLineLen: 10
         }))
-        .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-        .pipe(gulp.dest(pathdir.dist))
+        .pipe(lineec())
+        .pipe(gulp.dest(pathdir.dist+'/styles/'))
 
-    .pipe(filter('**/*.css')) // Filtering stream to only css files
-        .pipe(browserSync.stream()) // Reloads style.min.css if that is enqueued.
+    .pipe(filter('**/*.css'))
+        .pipe(browserSync.stream());
 });
 
 
@@ -193,16 +201,16 @@ gulp.task('styles', function() {
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
 gulp.task('js', function() {
-    gulp.src(pathdir.js)
+    gulp.src([vendorLibs.jQuery ,pathdir.js])
         .pipe(concat('main.js'))
-        .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
+        .pipe(lineec())
         .pipe(gulp.dest(pathdir.dist))
         .pipe(rename({
             basename: 'main',
             suffix: '.min'
         }))
         .pipe(uglify())
-        .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
+        .pipe(lineec())
         .pipe(gulp.dest(pathdir.dist+'/js/'));
 });
 
@@ -312,6 +320,19 @@ gulp.task('serve', ['clean:dist', 'styles', 'js', 'images', 'copy', 'browser-syn
     ]).on('change', browserSync.reload);
 });
 
+/**
+ * Build Tasks.
+ *
+ * Task to build production version.
+ */
+gulp.task('build', [
+  'clean:dist',
+  'styles',
+  'js',
+  'images',
+  'copy']
+);
+
 
 /**
  * Watch Tasks.
@@ -322,4 +343,24 @@ gulp.task('default', ['styles', 'js', 'images', 'browser-sync'], function() {
     gulp.watch(pathdir.php, reload); // Reload on PHP file changes.
     gulp.watch(pathdir.sass, ['styles']); // Reload on SCSS file changes.
     gulp.watch(pathdir.js, ['js', reload]); // Reload on vendorsJs file changes.
+});
+
+
+/**
+ * Deploy Tasks.
+ *
+ * Tasks to deploy dist folder to remote host via ftp.
+ */
+gulp.task('deploy', function() {
+  var remotePath = '/wp-content/themes/fischerTruck/';
+  var conn = ftp.create({
+    host: 't7lab.com',
+    user: args.user,
+    password: args.password,
+    log: gutil.log
+  });
+
+  gulp.src([pathdir.dist+'/**/*'])
+    .pipe(conn.newer(remotePath))
+    .pipe(conn.dest(remotePath));
 });
