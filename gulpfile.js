@@ -168,9 +168,9 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
 
-    .pipe(sourcemaps.write(pathdir.dist+'/styles/'))
+    .pipe(sourcemaps.write(pathdir.dist))
         .pipe(lineec())
-        .pipe(gulp.dest(pathdir.dist+'/styles/'))
+        .pipe(gulp.dest(pathdir.dist))
 
     .pipe(filter('**/*.css'))
         .pipe(mmq({ log: true }))
@@ -182,7 +182,7 @@ gulp.task('styles', function() {
             maxLineLen: 10
         }))
         .pipe(lineec())
-        .pipe(gulp.dest(pathdir.dist+'/styles/'))
+        .pipe(gulp.dest(pathdir.dist))
 
     .pipe(filter('**/*.css'))
         .pipe(browserSync.stream());
