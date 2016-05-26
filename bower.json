@@ -1,0 +1,21 @@
+{
+  "name": "fischer-truck-theme",
+  "description": "Theme for fischer truck",
+  "main": "gulpfile.js",
+  "authors": [
+    "Philipp Timmalog"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "http://fischer.de",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^2.2.4"
+  }
+}

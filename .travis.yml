@@ -13,6 +13,6 @@ before_script:
 - npm install -g gulp
 - npm install
 - bower install
-- gulp build:prod
+- gulp build
 after_success:
   gulp deploy --user $FTP_FISCHER_USER --password $FTP_FISCHER_PASSWORD
