@@ -30,3 +30,17 @@
 p {
   color: black;
 }
+
+.masthead {
+  .content {
+    background: no-repeat center center;
+    background-size: cover;
+    position: relative;
+    min-height: 480px;
+
+    @include breakpoint($xs) {
+      min-height: 444px;
+    }
+  }
+}
+

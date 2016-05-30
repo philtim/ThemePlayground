@@ -16,18 +16,26 @@ get_header(); ?>
 
       <!-- #masthead -->
       <section id="masthead" class="masthead">
-        <div class="content">
           <?php
           $query = new WP_Query(array('post_type' => 'masthead'));
           if($query -> have_posts()) {
             while ( $query->have_posts() ) {
               $query->the_post();
+
+
+
+              echo '<div class="content" style="background-image: url(';
+                the_post_thumbnail_url();
+              echo ')">';
+
+              echo '<div class="textContainer">';
               the_content();
+              echo '</div>';
+              echo '</div>';
             }
             wp_reset_query();
           }
           ?>
-        </div>
       </section>
 
       <!-- #truckStops -->

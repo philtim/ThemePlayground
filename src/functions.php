@@ -147,3 +147,14 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+function theme_prefix_setup() {
+  add_theme_support( 'custom-logo', array(
+    'height'      => 60,
+    'width'       => 400,
+    'flex-width' => true
+  ) );
+};
+
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
