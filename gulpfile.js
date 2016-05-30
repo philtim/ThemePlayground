@@ -130,7 +130,7 @@ gulp.task('browser-sync', function() {
 
         // Inject CSS changes.
         // Commnet it to reload browser for every CSS change.
-        injectChanges: true,
+        injectChanges: true
 
         // Use a specific port (instead of the one auto-detected by Browsersync).
         // port: 7000,
@@ -154,7 +154,7 @@ gulp.task('browser-sync', function() {
  *    7. Injects CSS or reloads the browser via browserSync
  */
 gulp.task('styles', function() {
-    gulp.src(pathdir.sass)
+  return gulp.src(pathdir.sass)
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
@@ -202,7 +202,7 @@ gulp.task('styles', function() {
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
 gulp.task('js', function() {
-    gulp.src([vendorLibs.jQuery, vendorLibs.bootstrap, pathdir.js])
+  return gulp.src([vendorLibs.jQuery, vendorLibs.bootstrap, pathdir.js])
         .pipe(concat('main.js'))
         .pipe(lineec())
         .pipe(gulp.dest(pathdir.dist))
@@ -230,7 +230,7 @@ gulp.task('js', function() {
  * again, do it with the command `gulp images`.
  */
 gulp.task('images', function() {
-    gulp.src(imagesSRC)
+  return gulp.src(imagesSRC)
         .pipe(imagemin({
             progressive: true,
             optimizationLevel: 3, // 0-7 low-high
@@ -361,7 +361,7 @@ gulp.task('deploy:theme', function() {
     log: gutil.log
   });
 
-  gulp.src([pathdir.dist+'/**/*'])
+  return gulp.src([pathdir.dist+'/**/*'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 });
@@ -375,7 +375,9 @@ gulp.task('deploy:plugin', function() {
     log: gutil.log
   });
 
-  gulp.src([pathdir.dist+'/fischer-posttypes.php'])
+  return gulp.src([pathdir.dist+'/fischer-posttypes.php'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 });
+
+gulp.task('deploy', ['deploy:theme', 'deploy:plugin']);

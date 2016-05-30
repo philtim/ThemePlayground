@@ -15,5 +15,4 @@ before_script:
 - bower install
 - gulp build
 after_success:
-  gulp deploy:theme --user $FTP_FISCHER_USER --password $FTP_FISCHER_PASSWORD
-  gulp deploy:plugin --user $FTP_FISCHER_USER --password $FTP_FISCHER_PASSWORD
+  gulp deploy --user $FTP_FISCHER_USER --password $FTP_FISCHER_PASSWORD
