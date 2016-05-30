@@ -16,7 +16,16 @@ get_header(); ?>
 
       <section id="keyvisual">
         <div class="content">
-          <h2>Keyvisual goes here</h2>
+          <?php
+          $query = new WP_Query(array('post_type' => 'masthead'));
+          if($query -> have_posts()) {
+            while ( $query->have_posts() ) {
+              $query->the_post();
+              the_content();
+            }
+            wp_reset_query();
+          }
+          ?>
         </div>
       </section>
 

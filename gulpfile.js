@@ -35,7 +35,8 @@ var pathdir = {
 };
 
 var vendorLibs = {
-  'jQuery': 'bower_components/jQuery/dist/jquery.js'
+  'jQuery': 'bower_components/jQuery/dist/jquery.js',
+  'bootstrap': 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js'
 };
 
 // Translation related.
@@ -201,7 +202,7 @@ gulp.task('styles', function() {
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
 gulp.task('js', function() {
-    gulp.src([vendorLibs.jQuery ,pathdir.js])
+    gulp.src([vendorLibs.jQuery, vendorLibs.bootstrap, pathdir.js])
         .pipe(concat('main.js'))
         .pipe(lineec())
         .pipe(gulp.dest(pathdir.dist))
@@ -351,7 +352,7 @@ gulp.task('default', ['styles', 'js', 'images', 'browser-sync'], function() {
  *
  * Tasks to deploy dist folder to remote host via ftp.
  */
-gulp.task('deploy', function() {
+gulp.task('deploy:theme', function() {
   var remotePath = '/wp-content/themes/fischerTruck/';
   var conn = ftp.create({
     host: 't7lab.com',
@@ -361,6 +362,20 @@ gulp.task('deploy', function() {
   });
 
   gulp.src([pathdir.dist+'/**/*'])
+    .pipe(conn.newer(remotePath))
+    .pipe(conn.dest(remotePath));
+});
+
+gulp.task('deploy:plugin', function() {
+  var remotePath = '/wp-content/plugins/';
+  var conn = ftp.create({
+    host: 't7lab.com',
+    user: args.user,
+    password: args.password,
+    log: gutil.log
+  });
+
+  gulp.src([pathdir.dist+'/fischer-posttypes.php'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 });
