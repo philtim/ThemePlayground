@@ -4,7 +4,7 @@
  * Plugin Name: Fischer Custom Post Types and Taxonomies
  * Description: A plugin that adds custom post types and taxonomies
  * Version: 0.1
- * Author: Philipp Timmalog <phil@t7lab.com>
+ * Author: fischerwerke GmbH & Co. KG
  */
 
 function fischer_custom_posttypes() {
