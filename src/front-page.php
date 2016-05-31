@@ -47,6 +47,8 @@ get_header(); ?>
             while ( $query->have_posts() ) {
               $query->the_post();
               the_content();
+              the_field('date_for_truck_stop');
+              the_field('address_for_truck_stop');
             }
             wp_reset_query();
           }

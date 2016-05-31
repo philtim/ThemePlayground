@@ -76,7 +76,7 @@ function fischer_posttypes_truckstops() {
     'capability_type' => 'post',
     'has_archive' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor')
+    'supports' => array('title')
     // TODO (Philipp Timmalog): Add acf for location input
   );
   register_post_type( 'truckstops', $args );
