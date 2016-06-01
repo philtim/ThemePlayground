@@ -3,7 +3,7 @@
 	display: block;
 	width: 100%;
   position: absolute;
-  top: 10px;
+  top: 14px;
   z-index: 100;
 
   .menu-front-page-menu-container {
@@ -20,7 +20,6 @@
     @include clearfix();
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
 			top: 1.5em;
@@ -95,8 +94,28 @@
   .menu-toggle {
     display: none;
   }
-  .main-navigation ul {
-    display: block;
+  .main-navigation {
+    clear: none;
+    position: relative;
+    width: auto;
+    float: right;
+
+
+    .menu-front-page-menu-container {
+      display: block;
+      margin-top: 0;
+
+      ul {
+        width: auto;
+        padding: 0;
+      }
+
+      li {
+        border: none;
+        float: left;
+        width: auto;
+      }
+    }
   }
 }
 

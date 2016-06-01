@@ -2,7 +2,9 @@
 
   &-header {
     width: 100%;
-    position: relative;
+    background: #fff;
+    height: 60px;
+    overflow: hidden;
     @include clearfix();
   }
 

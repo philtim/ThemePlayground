@@ -24,7 +24,7 @@
     <div id="page" class="site / fluid-container">
       <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'fischertruck' ); ?></a>
 
-      <header id="masthead" class="site-header" role="banner">
+      <header id="masthead" class="site-header / navbar-fixed-top" role="banner">
         <div class="site-branding">
           <?php
           if ( is_front_page()) : ?>
