@@ -316,9 +316,9 @@ gulp.task('serve', ['clean:dist', 'styles', 'js', 'images', 'copy', 'browser-syn
 });
 
 gulp.task('watch', function () {
-  gulp.watch('/src/**/*.php', ['copy']);
-  gulp.watch('/src/**/*.sass', ['styles']);
-  gulp.watch('/src/**/*.js', ['js']);
+  gulp.watch('src/**/*.php', ['copy']);
+  gulp.watch('src/**/*.scss', ['styles']);
+  gulp.watch('src/**/*.js', ['js']);
 
   gulp.watch([
     pathdir.php,
