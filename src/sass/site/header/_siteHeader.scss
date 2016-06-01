@@ -1,0 +1,18 @@
+.site {
+
+  &-header {
+    width: 100%;
+    position: relative;
+    @include clearfix();
+  }
+
+  &-branding {
+    float: left;
+    padding: 10px;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+}

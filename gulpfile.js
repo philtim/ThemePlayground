@@ -46,7 +46,7 @@ var package = 'VR';
 var bugReport = 'http://WPTie.com/contact/';
 var lastTranslator = 'Philipp Timmalog <phil@t7lab.com>';
 var team = 'fischerwerke GmbH & Co. KG';
-var translatePath = './languages'
+var translatePath = './languages';
 
 
 // Images related.
@@ -120,6 +120,8 @@ gulp.task('browser-sync', function() {
 
         // For more options
         // @link http://www.browsersync.io/docs/options/
+
+        notify: false,
 
         // Project URL.
         proxy: projectURL,
@@ -309,16 +311,20 @@ gulp.task('copy',[
  *
  * Provide different ways to serve content
  */
-gulp.task('serve', ['clean:dist', 'styles', 'js', 'images', 'copy', 'browser-sync'], function() {
-    gulp.watch(pathdir.php, ['copy']);
-    gulp.watch(pathdir.sass, ['styles']);
-    gulp.watch(pathdir.js, ['js']);
+gulp.task('serve', ['clean:dist', 'styles', 'js', 'images', 'copy', 'browser-sync', 'watch'], function() {
 
-    gulp.watch([
-      pathdir.php,
-      pathdir.sass,
-      pathdir.js
-    ]).on('change', browserSync.reload);
+});
+
+gulp.task('watch', function () {
+  gulp.watch('/src/**/*.php', ['copy']);
+  gulp.watch('/src/**/*.sass', ['styles']);
+  gulp.watch('/src/**/*.js', ['js']);
+
+  gulp.watch([
+    pathdir.php,
+    pathdir.sass,
+    pathdir.js
+  ]).on('change', browserSync.reload);
 });
 
 /**
@@ -340,11 +346,7 @@ gulp.task('build', [
  *
  * Watches for file changes and runs specific tasks.
  */
-gulp.task('default', ['styles', 'js', 'images', 'browser-sync'], function() {
-    gulp.watch(pathdir.php, reload); // Reload on PHP file changes.
-    gulp.watch(pathdir.sass, ['styles']); // Reload on SCSS file changes.
-    gulp.watch(pathdir.js, ['js', reload]); // Reload on vendorsJs file changes.
-});
+gulp.task('default', ['build']);
 
 
 /**

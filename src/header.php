@@ -21,7 +21,7 @@
   </head>
 
   <body <?php body_class(); ?>>
-    <div id="page" class="site">
+    <div id="page" class="site / fluid-container">
       <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'fischertruck' ); ?></a>
 
       <header id="masthead" class="site-header" role="banner">
@@ -47,8 +47,10 @@
         </div><!-- .site-branding -->
 
         <nav id="site-navigation" class="main-navigation" role="navigation">
-          <button class="menu-toggle" aria-controls="primary-menu"
-                  aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fischertruck' ); ?></button>
+          <button class="c-hamburger c-hamburger--htx menu-toggle / pull-right" aria-controls="primary-menu"
+                  aria-expanded="false">
+            <span><?php esc_html_e( 'Primary Menu', 'fischertruck' ); ?></span>
+          </button>
           <?php
             if ( is_front_page() ) {
               wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'front-page-menu' ) );

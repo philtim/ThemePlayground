@@ -40,7 +40,7 @@ get_header(); ?>
 
       <!-- #truckStops -->
       <section id="truckStops" class="truckStops">
-        <div class="content">
+        <div class="content / column">
           <!-- get locations and dates of all truck stops -->
           <?php
           $query = new WP_Query(array('post_type' => 'truckstops'));
@@ -59,18 +59,38 @@ get_header(); ?>
           ?>
 
           <?php if( $stopAddresses ): ?>
-            <div class="acf-map">
+
+
+            <!-- Build table with dates -->
+            <div class="timeTable / col-xs-6">
               <?php
               $counter = 0;
               foreach($stopAddresses as &$location) {?>
                 <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng'];?>">
-				          <h4><?php echo $stopDates[$counter]; ?></h4>
-				          <p class="address"><?php echo $location['address']; ?></p>
-			          </div>
-              <?php
-              $counter++;
+                  <h4><?php echo $stopDates[$counter]; ?></h4>
+                  <p class="address"><?php echo $location['address']; ?></p>
+                </div>
+                <?php
+                $counter++;
               }
               ?>
+            </div>
+
+            <!-- Add location markers on map -->
+            <div class="mapsWrapper / col-xs-12">
+              <div class="acf-map">
+                <?php
+                $counter = 0;
+                foreach($stopAddresses as &$location) {?>
+                  <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng'];?>">
+                    <h4><?php echo $stopDates[$counter]; ?></h4>
+                    <p class="address"><?php echo $location['address']; ?></p>
+                  </div>
+                <?php
+                $counter++;
+                }
+                ?>
+              </div>
             </div>
           <?php endif; ?>
 
