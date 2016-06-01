@@ -103,6 +103,8 @@
 
     .menu-front-page-menu-container {
       display: block;
+      transform: translate(0,0);
+      transition: none;
       margin-top: 0;
 
       ul {
