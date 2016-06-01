@@ -4,12 +4,12 @@
 	width: 100%;
   position: absolute;
   top: 14px;
-  z-index: 100;
 
   .menu-front-page-menu-container {
     background: #fff;
     margin-top: 45px;
-    display: none;
+    transform: translate(100%,0);
+    transition: 0.25s cubic-bezier(.52,.99,.74,.98);
   }
 
 	ul {
@@ -85,9 +85,9 @@
 }
 
 /* Small menu. */
-.menu-toggle,
 .main-navigation.toggled .menu-front-page-menu-container {
-	display: block;
+  opacity: 1;
+  transform: translate(0,0);
 }
 
 @include breakpoint($sm) {

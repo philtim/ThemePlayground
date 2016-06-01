@@ -4,17 +4,22 @@
     width: 100%;
     background: #fff;
     height: 60px;
-    overflow: hidden;
     @include clearfix();
   }
 
   &-branding {
     float: left;
     padding: 10px;
+    position: relative;
+    z-index: 20;
 
     h1 {
       margin: 0;
     }
   }
 
+}
+
+.admin-bar .site-header {
+  margin-top: 46px;
 }
