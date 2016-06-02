@@ -295,7 +295,8 @@ gulp.task('copy:languages', function () {
 });
 
 gulp.task('copy:fonts', function () {
-  return gulp.src(['bower_components/font-awesome/fonts/**/*'])
+  return gulp.src(['bower_components/font-awesome/fonts/**/*'
+  ])
     .pipe(gulp.dest(pathdir.dist+'/fonts/'));
 });
 

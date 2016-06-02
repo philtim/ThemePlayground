@@ -67,10 +67,10 @@
     }
 
     h2 {
-      font-size: 30px;
+      font-size: 25px;
     }
     h3 {
-      font-size: 20px;
+      font-size: 16px;
     }
 
 
@@ -86,26 +86,8 @@
         font-size: 35px;
       }
     }
-
-    @include breakpoint($sm) {
-      width: 70%;
-      h2 {
-        font-size: 55px;
-      }
-      h3 {
-        font-size: 35px;
-      }
-    }
-
-
-
-
   }
 
-}
-
-.primary-red {
-  color: $color__primary_red;
 }
 
 .quickNav {
@@ -123,11 +105,15 @@
     background: url(http://localhost/fischertruck/wp-content/uploads/2016/06/tmpBg.jpg) no-repeat center center;
     background-size: auto 100%;
     padding: 0;
-    margin: 0 5px;
+    margin: 5px 0;
     height: 100px;
     overflow: hidden;
     transition: all 0.15s ease-in;
     position: relative;
+
+    @include breakpoint($sm) {
+      margin: 0 5px;
+    }
 
     &:hover {
       background-size: auto 140%;

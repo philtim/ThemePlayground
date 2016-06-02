@@ -12,7 +12,7 @@
 get_header(); ?>
 
   <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main column" role="main">
 
       <!-- #masthead -->
       <section id="home" class="masthead">
@@ -39,8 +39,8 @@ get_header(); ?>
             wp_reset_query();
           }
           ?>
-        <div class="quickNav">
-            <div class="column clearfix">
+        <div class="quickNav hidden-xs">
+            <div class="clearfix">
               <a href="#truckStops" class="quicklink / col-xs-12 col-sm-2">
                 <div class="content">
                   <h4>Next Truck Stops</h4>
@@ -107,7 +107,7 @@ get_header(); ?>
 
 
             <!-- Build table with dates -->
-            <div class="timeTable / col-xs-12">
+            <div class="timeTable / hidden-xs col-xs-12">
 <!--              --><?php
 //              $counter = 0;
 //              foreach($stopAddresses as &$location) {?>
