@@ -15,14 +15,12 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
 
       <!-- #masthead -->
-      <section id="masthead" class="masthead">
+      <section id="home" class="masthead">
           <?php
           $query = new WP_Query(array('post_type' => 'masthead'));
           if($query -> have_posts()) {
             while ( $query->have_posts() ) {
               $query->the_post();
-
-
 
               echo '<div class="content" style="background-image: url(';
                 the_post_thumbnail_url();
@@ -62,7 +60,7 @@ get_header(); ?>
 
 
             <!-- Build table with dates -->
-            <div class="timeTable / col-xs-6">
+            <div class="timeTable / col-xs-12">
               <?php
               $counter = 0;
               foreach($stopAddresses as &$location) {?>
@@ -100,69 +98,77 @@ get_header(); ?>
 
       <!-- #truckInformation -->
       <section id="truckInformation" class="truckInformation">
-        <div class="content">
-          <?php
-          $args = array(
-            'post_type' => 'truckinformation',
-            'order' => 'ASC',
-          );
-          $query = new WP_Query($args);
-          if($query -> have_posts()) {
-            while ( $query->have_posts() ) {
-              $query->the_post();
-              the_content();
+        <div class="content / column">
+          <div class="col-xs-12">
+            <?php
+            $args = array(
+              'post_type' => 'truckinformation',
+              'order' => 'ASC',
+            );
+            $query = new WP_Query($args);
+            if($query -> have_posts()) {
+              while ( $query->have_posts() ) {
+                $query->the_post();
+                the_content();
+              }
+              wp_reset_query();
             }
-            wp_reset_query();
-          }
-          ?>
+            ?>
+          </div>
         </div>
       </section>
 
       <!-- #truckExperience -->
       <section id="truckExperience" class="truckExperience">
-        <div class="content">
-          <?php
-          $query = new WP_Query(array('post_type' => 'truckexperience'));
-          if($query -> have_posts()) {
-            while ( $query->have_posts() ) {
-              $query->the_post();
-              the_content();
+        <div class="content / column">
+          <div class="col-xs-12">
+            <?php
+            $query = new WP_Query(array('post_type' => 'truckexperience'));
+            if($query -> have_posts()) {
+              while ( $query->have_posts() ) {
+                $query->the_post();
+                the_content();
+              }
+              wp_reset_query();
             }
-            wp_reset_query();
-          }
-          ?>
+            ?>
+          </div>
         </div>
       </section>
 
       <!-- #socialFeed -->
       <section id="socialFeed" class="socialFeed">
-        <div class="content">
-          <?php
-          $query = new WP_Query(array('post_type' => 'socialfeed'));
-          if($query -> have_posts()) {
-            while ( $query->have_posts() ) {
-              $query->the_post();
-              the_content();
+        <div class="content / column">
+          <div class="col-xs-12">
+            <?php
+            $query = new WP_Query(array('post_type' => 'socialfeed'));
+            if($query -> have_posts()) {
+              while ( $query->have_posts() ) {
+                $query->the_post();
+                the_content();
+              }
+              wp_reset_query();
             }
-            wp_reset_query();
-          }
-          ?>
+            ?>
+          </div>
         </div>
       </section>
 
       <!-- #contest -->
       <section id="contest" class="contest">
-        <div class="content">
-          <?php
-          $query = new WP_Query(array('post_type' => 'contest'));
-          if($query -> have_posts()) {
-            while ( $query->have_posts() ) {
-              $query->the_post();
-              the_content();
+        <div class="content / column">
+          <div class="col-xs-12">
+            <?php
+            $query = new WP_Query(array('post_type' => 'contest'));
+            if($query -> have_posts()) {
+              while ( $query->have_posts() ) {
+                $query->the_post();
+                the_content();
+              }
+              wp_reset_query();
             }
-            wp_reset_query();
-          }
-          ?>
+            ?>
+          </div>
         </div>
       </section>
 

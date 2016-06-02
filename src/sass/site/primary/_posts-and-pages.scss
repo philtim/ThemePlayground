@@ -27,10 +27,6 @@
 	margin: 0 0 1.5em;
 }
 
-p {
-  color: black;
-}
-
 .site-content {
   margin-top: 60px;
 }
@@ -45,8 +41,26 @@ p {
     position: relative;
     min-height: 480px;
 
-    @include breakpoint($xs) {
-      min-height: 444px;
+    @include breakpoint($sm) {
+      min-height: 500px;
+    }
+
+    @include breakpoint($md) {
+      min-height: 500px;
+    }
+
+    @include breakpoint($lg) {
+      min-height: 800px;
+    }
+
+    .textContainer {
+      width: 75%;
+      background: rgba(255,255,255,0.25);
+      border: 2px solid white;
+      padding: 5px;
+      position: absolute;
+      bottom: 5%;
+      left: 10%;
     }
   }
 }

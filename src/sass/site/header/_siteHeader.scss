@@ -8,13 +8,18 @@
   }
 
   &-branding {
-    float: left;
-    padding: 10px;
     position: relative;
     z-index: 20;
+    height: 60px;
+    background: #fff;
+
+    @include breakpoint($sm) {
+      display: inline-block;
+    }
 
     h1 {
       margin: 0;
+      padding: 10px 0 0 10px;
     }
   }
 

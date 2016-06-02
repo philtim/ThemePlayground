@@ -3,18 +3,18 @@
 	display: block;
 	width: 100%;
   position: absolute;
-  top: 14px;
+  top: 12px;
 
   .menu-front-page-menu-container {
     background: #fff;
     margin-top: 45px;
-    transform: translate(100%,0);
+    transform: translate(0,-200%);
     transition: 0.25s cubic-bezier(.52,.99,.74,.98);
   }
 
 	ul {
 		list-style: none;
-		margin: 0;
+    margin: 0 5px 0 0;
 		padding: 10px 10px 0 10px;
     width: 100%;
     @include clearfix();
@@ -69,7 +69,6 @@
 
 	a {
 		display: block;
-		text-decoration: none;
     padding: 13px 10px;
 	}
 
@@ -82,6 +81,7 @@
 
 .menu-toggle {
   margin-right: 10px;
+  z-index: 50;
 }
 
 /* Small menu. */
