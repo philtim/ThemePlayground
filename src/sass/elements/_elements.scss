@@ -28,6 +28,12 @@ hr {
 	margin-bottom: 1.5em;
 }
 
+p {
+  a {
+    color: $color__primary_red;
+  }
+}
+
 @import "lists";
 
 img {
@@ -36,3 +42,15 @@ img {
 }
 
 @import "tables";
+
+.col {
+  column-count: 1;
+
+  @include breakpoint($sm) {
+    column-count: 2;
+  }
+
+  @include breakpoint($lg) {
+    column-count: 3;
+  }
+}

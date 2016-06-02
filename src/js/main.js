@@ -6,9 +6,14 @@ $(document).ready(function(){
 
     var target = this.hash;
     var $target = $(target);
+    var offset = $target.offset().top + 64;
+    if (target === '#home') {
+      offset = 0;
+    }
+    console.log(target);
 
     $('html, body').stop().animate({
-      'scrollTop': $target.offset().top + 20
+      'scrollTop': offset
     }, 400, 'swing', function () {
     });
   });

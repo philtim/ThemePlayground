@@ -10,8 +10,7 @@ a {
   }
 
 	&:hover,
-	&:focus,
-	&:active {
+	&:focus {
 		color: $color__primary_red;
 	}
 	&:focus {

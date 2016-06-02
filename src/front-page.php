@@ -16,6 +16,7 @@ get_header(); ?>
 
       <!-- #masthead -->
       <section id="home" class="masthead">
+        <div class="content">
           <?php
           $query = new WP_Query(array('post_type' => 'masthead'));
           if($query -> have_posts()) {
@@ -39,45 +40,45 @@ get_header(); ?>
             wp_reset_query();
           }
           ?>
-        <div class="quickNav hidden-xs">
-            <div class="clearfix">
-              <a href="#truckStops" class="quicklink / col-xs-12 col-sm-2">
-                <div class="content">
-                  <h4>Next Truck Stops</h4>
-                  <p>Der fischer Truck in Ihrer Nähe. Seien Sie live mit dabei.</p>
+          <div class="quickNav hidden-xs">
+              <div class="clearfix">
+                <a href="#truckStops" class="quicklink / col-xs-12 col-sm-2">
+                  <div class="content">
+                    <h4>Next Truck Stops</h4>
+                    <p>Der fischer Truck in Ihrer Nähe. Seien Sie live mit dabei.</p>
+                  </div>
+                </a>
+                <a href="#truckInformation" class="quicklink / col-xs-12 col-sm-2">
+                  <div class="content">
+                    <h4>TruckTour inside</h4>
+                    <p>Der fischer Truck von innen: mobile Akademie und Erlebnis-Location.</p>
+                  </div>
+                </a>
+                <a href="#truckExperience" class="quicklink / col-xs-12 col-sm-2">
+                  <div class="content">
+                    <h4>Das Truck Erlebnis</h4>
+                    <p>Dübel selbst testen, Profi-Wissen nutzen, und Preise gewinnen.</p>
+                  </div>
+                </a>
+                <div class="quicklink / col-xs-12 col-sm-2">
+                  <div class="content">
+                    <h4>Impressionen</h4>
+                    <p>tbd</p>
+                  </div>
                 </div>
-              </a>
-              <a href="#truckInformation" class="quicklink / col-xs-12 col-sm-2">
-                <div class="content">
-                  <h4>TruckTour inside</h4>
-                  <p>Der fischer Truck von innen: mobile Akademie und Erlebnis-Location.</p>
-                </div>
-              </a>
-              <a href="#truckExperience" class="quicklink / col-xs-12 col-sm-2">
-                <div class="content">
-                  <h4>Das Truck Erlebnis</h4>
-                  <p>Dübel selbst testen, Profi-Wissen nutzen, und Preise gewinnen.</p>
-                </div>
-              </a>
-              <div class="quicklink / col-xs-12 col-sm-2">
-                <div class="content">
-                  <h4>Impressionen</h4>
-                  <p>tbd</p>
+                <div class="quicklink / col-xs-12 col-sm-2">
+                  <div class="content">
+                    <h4>Gewinnspiel </h4>
+                    <p>tdb</p>
+                  </div>
                 </div>
               </div>
-              <div class="quicklink / col-xs-12 col-sm-2">
-                <div class="content">
-                  <h4>Gewinnspiel </h4>
-                  <p>tdb</p>
-                </div>
-              </div>
+
             </div>
-
-          </div>
-        <div class="content / column">
-          <div class="col-xs-12">
-            Der fischer Truck on Tour. Erleben Sie vor Ort das einzigartige <a href="#truckExperience">mobile Schulungs-, Ausstellungs- und Erlebniscenter</a>. Handwerker erweitern in kleinen Gruppen ihr Fachwissen in Theorie und Praxis. Heimwerker lernen die Vielfalt der Befestigungslösungen kennen und können selbst Produkte testen. Immer an Bord: die einzigartige Kompetenz unserer erfahrenen fischer Befestigungsexperten: Know-how und praktische Tipps von Profis. All das und noch mehr bietet der multifunktionale fischer Truck. Schauen Sie mal rein (Link Landingpage Infobox 2). Der fischer Truck macht sicher auch in Ihrer Nähe Halt. Schauen Sie einfach in die Tourdaten (Link Content Landingpage Infobox 1), informieren Sie sich als Handwerker bei fischer (Link Kontaktfeld) oder Ihrem Fachhändler zu Veranstaltungen vor Ort. Freuen Sie sich auf geballte Befestigungspower, Aktionen und Gewinnspiele.
-
+          <div class="copy col-xs-12">
+            <p class="col">
+              Der fischer Truck on Tour. Erleben Sie vor Ort das einzigartige <a href="#truckExperience">mobile Schulungs-, Ausstellungs- und Erlebniscenter</a>. Handwerker erweitern in kleinen Gruppen ihr Fachwissen in Theorie und Praxis. Heimwerker lernen die Vielfalt der Befestigungslösungen kennen und können selbst Produkte testen. Immer an Bord: die einzigartige Kompetenz unserer erfahrenen fischer Befestigungsexperten: Know-how und praktische Tipps von Profis. All das und noch mehr bietet der multifunktionale fischer Truck. Schauen Sie mal rein (Link Landingpage Infobox 2). Der fischer Truck macht sicher auch in Ihrer Nähe Halt. Schauen Sie einfach in die <a href="#truckStops">Tourdaten</a>, informieren Sie sich als Handwerker bei fischer (Link Kontaktfeld) oder Ihrem Fachhändler zu Veranstaltungen vor Ort. Freuen Sie sich auf geballte Befestigungspower, Aktionen und Gewinnspiele.
+            </p>
           </div>
         </div>
       </section>
@@ -85,7 +86,9 @@ get_header(); ?>
 
       <!-- #truckStops -->
       <section id="truckStops" class="truckStops">
-        <div class="content / column">
+        <div class="clearfix content / column">
+          <div class="col-xs-12">
+
           <!-- get locations and dates of all truck stops -->
           <?php
           $query = new WP_Query(array('post_type' => 'truckstops'));
@@ -105,57 +108,54 @@ get_header(); ?>
 
           <?php if( $stopAddresses ): ?>
 
-
-            <!-- Build table with dates -->
-            <div class="timeTable / hidden-xs col-xs-12">
-<!--              --><?php
-//              $counter = 0;
-//              foreach($stopAddresses as &$location) {?>
-<!--                <div class="marker" data-lat="--><?php //echo $location['lat']; ?><!--" data-lng="--><?php //echo $location['lng'];?><!--">-->
-<!--                  <h4>--><?php //echo $stopDates[$counter]; ?><!--</h4>-->
-<!--                  <p class="address">--><?php //echo $location['address']; ?><!--</p>-->
-<!--                </div>-->
-<!--                --><?php
-//                $counter++;
-//              }
-//              ?>
-
               <h2>Next Truck Stops</h2>
+
+          <div class="row">
+            <!-- Build table with dates -->
+            <div class="timeTable / hidden-xs col-xs-12 col-lg-5">
+              <!--              --><?php
+              //              $counter = 0;
+              //              foreach($stopAddresses as &$location) {?>
+              <!--                <div class="marker" data-lat="--><?php //echo $location['lat']; ?><!--" data-lng="--><?php //echo $location['lng'];?><!--">-->
+              <!--                  <h4>--><?php //echo $stopDates[$counter]; ?><!--</h4>-->
+              <!--                  <p class="address">--><?php //echo $location['address']; ?><!--</p>-->
+              <!--                </div>-->
+              <!--                --><?php
+              //                $counter++;
+              //              }
+              //              ?>
+
+
               <table class="table forum table-striped">
                 <thead>
                   <tr>
-                    <th class="cell-stat"></th>
                     <th class="cell-stat">Datum</th>
-                    <th class="cell-stat text-center">Uhrzeit</th>
-                    <th class="cell-stat text-center">Ort</th>
+                    <th class="cell-stat">Uhrzeit</th>
+                    <th class="cell-stat">Ort</th>
                     <th class="cell-stat-2x">Beschreibung</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="text-center"><i class="fa fa-map-marker fa-2x"></i></td>
-                    <td>
-                      <h5><a href="#">More more more</a><br><small>Category description</small></h5>
-                    </td>
-                    <td class="text-center"><a href="#">6532</a></td>
-                    <td class="text-center"><a href="#">152123</a></td>
-                    <td class="">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+                    <td>20. Juni 2016</td>
+                    <td>ab 12:00 Uhr</td>
+                    <td>Lorem Ipsum Mark<br><br>Musterstrasse 2<br>12345 Testhausen<br></td>
+
+                    <td>Hinweise zu Ansprechpartner, Aktionen, etc.</td>
                   </tr>
                   <tr>
-                    <td class="text-center"><i class="fa fa-magic fa-2x text-primary"></i></td>
-                    <td>
-                      <h5><a href="#">Haha</a><br><small>Category description</small></h5>
-                    </td>
-                    <td class="text-center"><a href="#">6532</a></td>
-                    <td class="text-center"><a href="#">152123</a></td>
-                    <td class="">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+                    <td>20. Juni 2016</td>
+                    <td>ab 12:00 Uhr</td>
+                    <td>Lorem Ipsum Mark<br><br>Musterstrasse 2<br>12345 Testhausen<br></td>
+
+                    <td>Hinweise zu Ansprechpartner, Aktionen, etc.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <!-- Add location markers on map -->
-            <div class="mapsWrapper / col-xs-12">
+            <div class="mapsWrapper / col-xs-12 col-lg-7">
               <div class="acf-map">
                 <?php
                 $counter = 0;
@@ -164,15 +164,17 @@ get_header(); ?>
                     <h4><?php echo $stopDates[$counter]; ?></h4>
                     <p class="address"><?php echo $location['address']; ?></p>
                   </div>
-                <?php
-                $counter++;
+                  <?php
+                  $counter++;
                 }
                 ?>
               </div>
             </div>
+          </div>
+        </div>
           <?php endif; ?>
 
-
+        </div>
         </div>
       </section>
 
@@ -180,20 +182,21 @@ get_header(); ?>
       <section id="truckInformation" class="truckInformation">
         <div class="content / column">
           <div class="col-xs-12">
-            <?php
-            $args = array(
-              'post_type' => 'truckinformation',
-              'order' => 'ASC',
-            );
-            $query = new WP_Query($args);
-            if($query -> have_posts()) {
-              while ( $query->have_posts() ) {
-                $query->the_post();
-                the_content();
-              }
-              wp_reset_query();
-            }
+<!--            --><?php
+//            $args = array(
+//              'post_type' => 'truckinformation',
+//              'order' => 'ASC',
+//            );
+//            $query = new WP_Query($args);
+//            if($query -> have_posts()) {
+//              while ( $query->have_posts() ) {
+//                $query->the_post();
+//                the_content();
+//              }
+//              wp_reset_query();
+//            }
             ?>
+            <h2>TruckTour inside</h2>
           </div>
         </div>
       </section>
@@ -202,16 +205,17 @@ get_header(); ?>
       <section id="truckExperience" class="truckExperience">
         <div class="content / column">
           <div class="col-xs-12">
-            <?php
-            $query = new WP_Query(array('post_type' => 'truckexperience'));
-            if($query -> have_posts()) {
-              while ( $query->have_posts() ) {
-                $query->the_post();
-                the_content();
-              }
-              wp_reset_query();
-            }
-            ?>
+<!--            --><?php
+//            $query = new WP_Query(array('post_type' => 'truckexperience'));
+//            if($query -> have_posts()) {
+//              while ( $query->have_posts() ) {
+//                $query->the_post();
+//                the_content();
+//              }
+//              wp_reset_query();
+//            }
+//            ?>
+            <h2>Das Truck Erlebnis</h2>
           </div>
         </div>
       </section>
@@ -220,34 +224,73 @@ get_header(); ?>
       <section id="socialFeed" class="socialFeed">
         <div class="content / column">
           <div class="col-xs-12">
-            <?php
-            $query = new WP_Query(array('post_type' => 'socialfeed'));
-            if($query -> have_posts()) {
-              while ( $query->have_posts() ) {
-                $query->the_post();
-                the_content();
-              }
-              wp_reset_query();
-            }
-            ?>
+<!--            --><?php
+//            $query = new WP_Query(array('post_type' => 'socialfeed'));
+//            if($query -> have_posts()) {
+//              while ( $query->have_posts() ) {
+//                $query->the_post();
+//                the_content();
+//              }
+//              wp_reset_query();
+//            }
+//            ?>
+            <h2>Impressionen </h2>
+            <p>Platzhalter für Plugin um Facebook und Instagram feeds anzuzeigen</p>
           </div>
         </div>
       </section>
 
       <!-- #contest -->
       <section id="contest" class="contest">
+        <div class="content">
+          <div class="col-xs-12">
+<!--            --><?php
+//            $query = new WP_Query(array('post_type' => 'contest'));
+//            if($query -> have_posts()) {
+//              while ( $query->have_posts() ) {
+//                $query->the_post();
+//                the_content();
+//              }
+//              wp_reset_query();
+//            }
+//            ?>
+            <h2>Gewinnspiel</h2>
+
+            <div class="column">
+              <p class="col">Allgemeine Informationen zum Gewinnspiel.</p>
+
+              <div class="contestContainer">
+                <div class="image" style="background-image: url(http://localhost/fischertruck/wp-content/uploads/2016/06/selfie.jpg)"></div>
+                <div class="textContainer">
+                  <h3>Schick uns Dein<br><strong>#fischertrucktour</strong>-Selfie</h3>
+                </div>
+              </div>
+
+            </div>
+            <div class="description">
+              <p class="col">Auflisten wie man am Gewinnspiel teilnehmen kann.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #socialFeed -->
+      <section id="contactform" class="contactform">
         <div class="content / column">
           <div class="col-xs-12">
-            <?php
-            $query = new WP_Query(array('post_type' => 'contest'));
-            if($query -> have_posts()) {
-              while ( $query->have_posts() ) {
-                $query->the_post();
-                the_content();
-              }
-              wp_reset_query();
-            }
-            ?>
+            <!--            --><?php
+            //            $query = new WP_Query(array('post_type' => 'socialfeed'));
+            //            if($query -> have_posts()) {
+            //              while ( $query->have_posts() ) {
+            //                $query->the_post();
+            //                the_content();
+            //              }
+            //              wp_reset_query();
+            //            }
+            //            ?>
+            <h2>Kontakt </h2>
+            <p>Platzhalter für Plugin um eine E-Mail an die fischerwerke zu senden.</p>
           </div>
         </div>
       </section>
