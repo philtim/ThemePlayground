@@ -362,7 +362,7 @@ gulp.task('default', ['build']);
  * Tasks to deploy dist folder to remote host via ftp.
  */
 gulp.task('deploy:theme', function() {
-  var remotePath = '/wp-content/themes/fischerTruck/';
+  var remotePath = '/wp-content/themes/fischertruck/';
   var conn = ftp.create({
     host: 't7lab.com',
     user: args.user,
