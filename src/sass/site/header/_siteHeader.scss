@@ -27,4 +27,8 @@
 
 .admin-bar .site-header {
   margin-top: 46px;
+
+  @include breakpoint($sm) {
+    margin-top: 32px;
+  }
 }

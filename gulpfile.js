@@ -294,6 +294,11 @@ gulp.task('copy:languages', function () {
     .pipe(gulp.dest(pathdir.dist+'/languages/'));
 });
 
+gulp.task('copy:fonts', function () {
+  return gulp.src(['bower_components/font-awesome/fonts/**/*'])
+    .pipe(gulp.dest(pathdir.dist+'/fonts/'));
+});
+
 gulp.task('copy:misc', function () {
   return gulp.src([pathdir.src+'/*.{png,txt,md}'])
     .pipe(gulp.dest(pathdir.dist));
@@ -302,6 +307,7 @@ gulp.task('copy:misc', function () {
 gulp.task('copy',[
   'copy:php',
   'copy:languages',
+  'copy:fonts',
   'copy:misc'
 ]);
 
