@@ -244,23 +244,25 @@ get_header(); ?>
       <section id="contest" class="contest">
         <div class="content">
           <div class="col-xs-12">
-<!--            --><?php
-//            $query = new WP_Query(array('post_type' => 'contest'));
-//            if($query -> have_posts()) {
-//              while ( $query->have_posts() ) {
-//                $query->the_post();
-//                the_content();
-//              }
-//              wp_reset_query();
-//            }
-//            ?>
+
             <h2>Gewinnspiel</h2>
 
             <div class="column">
               <p class="col">Allgemeine Informationen zum Gewinnspiel.</p>
 
               <div class="contestContainer">
-                <div class="image" style="background-image: url(http://localhost/fischertruck/wp-content/uploads/2016/06/selfie.jpg)"></div>
+                <?php
+                $query = new WP_Query(array('post_type' => 'contest'));
+                if($query -> have_posts()) {
+                  while ( $query->have_posts() ) {
+                    $query->the_post();
+                    echo '<div class="image" style="background-image: url(',
+                    the_post_thumbnail_url();
+                    echo ')"></div>';
+                  }
+                  wp_reset_query();
+                }
+                ?>
                 <div class="textContainer">
                   <h3>Schick uns Dein<br><strong>#fischertrucktour</strong>-Selfie</h3>
                 </div>

@@ -6,7 +6,7 @@ $(document).ready(function(){
 
     var target = this.hash;
     var $target = $(target);
-    var offset = $target.offset().top + 64;
+    var offset = $target.offset().top;
     if (target === '#home') {
       offset = 0;
     }
