@@ -6,11 +6,10 @@ $(document).ready(function(){
 
     var target = this.hash;
     var $target = $(target);
-    var offset = $target.offset().top;
+    var offset = $target.offset().top - 65;
     if (target === '#home') {
       offset = 0;
     }
-    console.log(target);
 
     $('html, body').stop().animate({
       'scrollTop': offset
