@@ -114,8 +114,11 @@ add_action( 'widgets_init', 'fischertruck_widgets_init' );
  * Enqueue scripts and styles.
  */
 function fischertruck_scripts() {
-  wp_enqueue_script( 'googlemaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' );
+
+  wp_enqueue_style( 'googlefonts', 'https://fonts.googleapis.com/css?family=Muli' );
   wp_enqueue_style( 'fischertruck-style', get_stylesheet_uri() );
+
+  wp_enqueue_script( 'googlemaps', 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&v=3.exp&sensor=false' );
   wp_enqueue_script( 'fischertruck-js', get_template_directory_uri() . '/js/main.min.js', array(), '20151215', true );
 
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
