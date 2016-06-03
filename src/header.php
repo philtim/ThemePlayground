@@ -21,44 +21,46 @@
   </head>
 
   <body <?php body_class(); ?>>
-    <div id="page" class="site / fluid-container">
+    <div id="page" class="site">
       <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'fischertruck' ); ?></a>
 
       <header id="masthead" class="site-header / navbar-fixed-top" role="banner">
-        <div class="site-branding">
-          <?php
-          if ( is_front_page()) : ?>
-            <h1 class="site-title"><?php
-              if ( function_exists( 'the_custom_logo' ) ) {
-                the_custom_logo();
-              }
-              ?></h1>
-          <?php else : ?>
-            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                                     rel="home"><?php bloginfo( 'name' ); ?></a></p>
+        <div class="container">
+          <div class="site-branding">
             <?php
-          endif;
+            if ( is_front_page()) : ?>
+              <h1 class="site-title"><?php
+                if ( function_exists( 'the_custom_logo' ) ) {
+                  the_custom_logo();
+                }
+                ?></h1>
+            <?php else : ?>
+              <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+                                       rel="home"><?php bloginfo( 'name' ); ?></a></p>
+              <?php
+            endif;
 
-          $description = get_bloginfo( 'description', 'display' );
-          if ( $description || is_customize_preview() ) : ?>
-            <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+            $description = get_bloginfo( 'description', 'display' );
+            if ( $description || is_customize_preview() ) : ?>
+              <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+              <?php
+            endif; ?>
+          </div><!-- .site-branding -->
+
+          <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="c-hamburger c-hamburger--htx menu-toggle / pull-right" aria-controls="primary-menu"
+                    aria-expanded="false">
+              <span><?php esc_html_e( 'Primary Menu', 'fischertruck' ); ?></span>
+            </button>
             <?php
-          endif; ?>
-        </div><!-- .site-branding -->
-
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-          <button class="c-hamburger c-hamburger--htx menu-toggle / pull-right" aria-controls="primary-menu"
-                  aria-expanded="false">
-            <span><?php esc_html_e( 'Primary Menu', 'fischertruck' ); ?></span>
-          </button>
-          <?php
             if ( is_front_page() ) {
               wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'front-page-menu' ) );
             } else {
               wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
             }
-          ?>
-        </nav><!-- #site-navigation -->
+            ?>
+          </nav><!-- #site-navigation -->
+        </div>
       </header><!-- #masthead -->
 
       <div id="content" class="site-content">

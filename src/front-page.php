@@ -12,10 +12,15 @@
 get_header(); ?>
 
   <div id="primary" class="content-area">
-    <main id="main" class="site-main column" role="main">
+    <main id="main" class="site-main" role="main">
 
       <!-- #masthead -->
       <section id="home" class="masthead">
+        <div class="content">
+          <?php get_template_part( 'partials/masthead-keyvisual' ); ?>
+        </div>
+      </section>
+      <section class="container masthead">
         <div class="content">
           <?php get_template_part( 'partials/masthead' ); ?>
         </div>
@@ -23,7 +28,7 @@ get_header(); ?>
       </section>
 
       <!-- #truckStops -->
-      <section id="truckStops" class="truckStops">
+      <section id="truckStops" class="container truckStops">
         <div class="content">
           <?php get_template_part( 'partials/truckStops' ); ?>
         </div>
@@ -31,39 +36,39 @@ get_header(); ?>
       </section>
 
       <!-- #truckInformation -->
-      <section id="truckInformation" class="truckInformation">
+      <section id="truckInformation" class="container truckInformation">
         <div class="content">
           <?php get_template_part( 'partials/truckInformation' ); ?>
         </div>
+        <hr>
       </section>
-      <hr>
 
       <!-- #truckExperience -->
-      <section id="truckExperience" class="truckExperience">
+      <section id="truckExperience" class="container truckExperience">
         <div class="content">
           <?php get_template_part( 'partials/truckExperience' ); ?>
         </div>
+        <hr>
       </section>
-      <hr>
 
       <!-- #socialFeed -->
-      <section id="socialFeed" class="socialFeed">
+      <section id="socialFeed" class="container socialFeed">
         <div class="content">
           <?php get_template_part( 'partials/socialFeed' ); ?>
         </div>
+        <hr>
       </section>
-      <hr>
 
       <!-- #contest -->
-      <section id="contest" class="contest">
+      <section id="contest" class="container contest">
         <div class="content">
           <?php get_template_part( 'partials/contest' ); ?>
         </div>
+        <hr>
       </section>
-      <hr>
 
       <!-- #socialFeed -->
-      <section id="contactform" class="contactform">
+      <section id="contactform" class="container contactform">
         <div class="content">
           <?php get_template_part( 'partials/contactform' ); ?>
         </div>
