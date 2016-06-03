@@ -19,6 +19,7 @@ get_header(); ?>
         <div class="content">
           <?php get_template_part( 'partials/masthead' ); ?>
         </div>
+        <hr>
       </section>
 
       <!-- #truckStops -->
@@ -26,6 +27,7 @@ get_header(); ?>
         <div class="content">
           <?php get_template_part( 'partials/truckStops' ); ?>
         </div>
+        <hr>
       </section>
 
       <!-- #truckInformation -->
@@ -34,6 +36,7 @@ get_header(); ?>
           <?php get_template_part( 'partials/truckInformation' ); ?>
         </div>
       </section>
+      <hr>
 
       <!-- #truckExperience -->
       <section id="truckExperience" class="truckExperience">
@@ -41,6 +44,7 @@ get_header(); ?>
           <?php get_template_part( 'partials/truckExperience' ); ?>
         </div>
       </section>
+      <hr>
 
       <!-- #socialFeed -->
       <section id="socialFeed" class="socialFeed">
@@ -48,6 +52,7 @@ get_header(); ?>
           <?php get_template_part( 'partials/socialFeed' ); ?>
         </div>
       </section>
+      <hr>
 
       <!-- #contest -->
       <section id="contest" class="contest">
@@ -55,6 +60,7 @@ get_header(); ?>
           <?php get_template_part( 'partials/contest' ); ?>
         </div>
       </section>
+      <hr>
 
       <!-- #socialFeed -->
       <section id="contactform" class="contactform">

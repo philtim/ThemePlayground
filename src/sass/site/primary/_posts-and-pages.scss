@@ -37,8 +37,9 @@
 .masthead {
   @include clearfix();
 
-  .copy {
-    margin-top: 25px;
+  .content {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .imageTextContent {
@@ -155,23 +156,14 @@
 
 section:not(.masthead) {
   h2 {
-    display: inline-block;
-    border-top: 2px solid $color__primary_red;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
   }
 }
 
-.truckStops {
-  margin-bottom: 20px;
-}
-
-.masthead,
-.truckInformation,
-.truckExperience,
-.socialFeed {
-  margin-bottom: 20px;
-
+section {
   .content {
+    padding: 0 15px 40px 15px;
+    width: 100%;
     @include clearfix();
   }
 }

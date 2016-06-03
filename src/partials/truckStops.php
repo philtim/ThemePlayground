@@ -1,25 +1,23 @@
-<div class="col-xs-12">
+<!-- get locations and dates of all truck stops -->
+<?php
+$query         = new WP_Query( array( 'post_type' => 'truckstops' ) );
+$stopDates     = array();
+$stopAddresses = array();
 
-  <!-- get locations and dates of all truck stops -->
-  <?php
-  $query = new WP_Query(array('post_type' => 'truckstops'));
-  $stopDates = array();
-  $stopAddresses = array();
-
-  if($query -> have_posts()) {
-    while ( $query->have_posts() ) {
-      $query->the_post();
-      the_content();
-      array_push($stopDates, get_field('date_for_truck_stop'));
-      array_push($stopAddresses, get_field('address_for_truck_stop'));
-    }
-    wp_reset_query();
-  } ?>
+if ( $query->have_posts() ) {
+  while ( $query->have_posts() ) {
+    $query->the_post();
+    the_content();
+    array_push( $stopDates, get_field( 'date_for_truck_stop' ) );
+    array_push( $stopAddresses, get_field( 'address_for_truck_stop' ) );
+  }
+  wp_reset_query();
+} ?>
 
 
-  <?php if( $stopAddresses ): ?>
+<?php if ( $stopAddresses ): ?>
 
-    <h2>Next Truck Stops</h2>
+  <h2>Next Truck Stops</h2>
 
   <div class="row">
     <!-- Build table with dates -->
@@ -27,7 +25,8 @@
       <!--              --><?php
       //              $counter = 0;
       //              foreach($stopAddresses as &$location) {?>
-      <!--                <div class="marker" data-lat="--><?php //echo $location['lat']; ?><!--" data-lng="--><?php //echo $location['lng'];?><!--">-->
+      <!--                <div class="marker" data-lat="--><?php //echo $location['lat']; ?><!--" data-lng="-->
+      <?php //echo $location['lng'];?><!--">-->
       <!--                  <h4>--><?php //echo $stopDates[$counter]; ?><!--</h4>-->
       <!--                  <p class="address">--><?php //echo $location['address']; ?><!--</p>-->
       <!--                </div>-->
@@ -69,13 +68,13 @@
       <div class="acf-map">
         <?php
         $counter = 0;
-        foreach($stopAddresses as &$location) {?>
-          <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng'];?>">
-            <h4><?php echo $stopDates[$counter]; ?></h4>
+        foreach ( $stopAddresses as &$location ) { ?>
+          <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+            <h4><?php echo $stopDates[ $counter ]; ?></h4>
             <p class="address"><?php echo $location['address']; ?></p>
           </div>
           <?php
-          $counter++;
+          $counter ++;
         }
         ?>
       </div>
@@ -84,4 +83,3 @@
 
 
 <?php endif; ?>
-</div>
