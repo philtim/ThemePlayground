@@ -21,6 +21,11 @@ blockquote, q {
 	}
 }
 
+.preload {
+  position: absolute;
+  visibility: hidden;
+}
+
 hr {
 	background-color: $color__primary_red;
 	height: 2px;

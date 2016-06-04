@@ -17,6 +17,9 @@ $(document).ready(function(){
     });
   });
 
+  $(".infoTooltip").popover({
+    html:true
+  });
 
   // Add 100% height on image
   fullheightImage();
