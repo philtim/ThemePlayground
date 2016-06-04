@@ -1,9 +1,14 @@
 .main-navigation {
 	clear: both;
 	display: block;
-	width: 100%;
+	width: auto;
   position: absolute;
+  height: 40px;
   top: 12px;
+
+  &.toggled {
+    height: auto;
+  }
 
   .menu-front-page-menu-container {
     background: #fff;

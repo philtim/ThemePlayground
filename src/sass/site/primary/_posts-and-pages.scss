@@ -160,10 +160,18 @@ section:not(.masthead) {
   }
 }
 
+@media screen and (max-width:767px) {
+  .container {
+    padding-left: 0;
+    pardding-right: 0;
+  }
+}
+
 section {
   .content {
     padding: 0 15px 40px 15px;
     width: 100%;
+    overflow: hidden;
     @include clearfix();
   }
 }

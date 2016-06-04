@@ -21,7 +21,7 @@ if ( $query->have_posts() ) {
 
   <div class="row">
     <!-- Build table with dates -->
-    <div class="timeTable / hidden-xs col-xs-12 col-lg-5">
+    <div class="timeTable / col-xs-12 col-lg-5">
       <!--              --><?php
       //              $counter = 0;
       //              foreach($stopAddresses as &$location) {?>
@@ -49,7 +49,7 @@ if ( $query->have_posts() ) {
           <tr>
             <td>20. Juni 2016</td>
             <td>ab 12:00 Uhr</td>
-            <td>Lorem Ipsum Mark<br><br>Musterstrasse 2<br>12345 Testhausen<br></td>
+            <td><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen<br></td>
 
             <td>Hinweise zu Ansprechpartner, Aktionen, etc.</td>
           </tr>

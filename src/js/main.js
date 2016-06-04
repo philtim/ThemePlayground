@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  FastClick.attach(document.body);
+
   // Add smooth scrolling
   $('a[href^="#"]').on('click',function (e) {
     e.preventDefault();
@@ -15,6 +17,11 @@ $(document).ready(function(){
       'scrollTop': offset
     }, 400, 'swing', function () {
     });
+
+    // remove toggle state from navbar
+    $('#site-navigation').removeClass('toggled');
+    $('#site-navigation .menu-toggle').removeClass('is-active');
+
   });
 
   $(".infoTooltip").popover({
