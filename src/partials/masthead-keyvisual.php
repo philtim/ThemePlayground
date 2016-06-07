@@ -10,9 +10,9 @@ if($query -> have_posts()) {
     echo '</div>';
     echo '<div class="textWrapper">';
     echo '<div class="text">';
-    echo '<h2>Der <strong>fischer</strong> Tour Truck</h2>';
-    echo '<h3>Befestigungstechnik live erleben.</h3>';
-    //the_content();
+    echo '<h2>';
+    echo get_field( 'masthead-headline' );
+    echo '</h2>';
 
     echo '</div>';
     echo '</div>';

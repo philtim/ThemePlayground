@@ -16,11 +16,11 @@ if ( $query->have_posts() ) {
 
     <div class="infoTooltip tpos1"
          data-toggle="popover" data-placement="left" class="infoTooltip"
-         title="Obergeschoss"
+         title="Schulungsraum"
          data-content="Information zum Schulungsraum.
-         <img src='http://localhost/fischertruck/wp-content/uploads/2016/06/test01.png' />"
+         <img src='http://fischer-preview.t7lab.com/wp-content/uploads/2016/06/test02.png' />"
       >
-      <img class="preload" src="http://localhost/fischertruck/wp-content/uploads/2016/06/test01.png">
+      <img class="preload" src="http://fischer-preview.t7lab.com/wp-content/uploads/2016/06/test02.png">
       <div class="pulse_marker"></div>
       <div class="pulse_glow"></div>
     </div>
@@ -28,10 +28,10 @@ if ( $query->have_posts() ) {
     <div class="infoTooltip tpos2"
          data-toggle="popover" data-placement="right" class="infoTooltip"
          title="Titel"
-         data-content="Information goes here, event an image is possible.
-         <img src='http://localhost/fischertruck/wp-content/uploads/2016/06/test02.png' />"
+         data-content="Information goes here, even an image is possible.
+         <img src='http://fischer-preview.t7lab.com/wp-content/uploads/2016/06/test01.png' />"
       >
-      <img class="preload" src="http://localhost/fischertruck/wp-content/uploads/2016/06/test02.png">
+      <img class="preload" src="http://fischer-preview.t7lab.com/wp-content/uploads/2016/06/test01.png">
       <div class="pulse_marker"></div>
       <div class="pulse_glow"></div>
     </div>

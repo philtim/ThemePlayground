@@ -53,17 +53,16 @@
 
   .textWrapper {
     width: 100%;
-    padding: 5px;
     position: absolute;
     text-align: center;
-    bottom: 5%;
+    bottom: 3%;
   }
 
   .text {
     border: 2px solid white;
     border-right: none;
     border-left: none;
-    padding: 5px 5px 20px 5px;
+    padding: 15px 0;
     color: #fff;
     margin: 0 auto;
     width: 90%;
@@ -75,6 +74,8 @@
 
     h2 {
       font-size: 25px;
+      padding: 0;
+      margin: 0;
     }
     h3 {
       font-size: 16px;
