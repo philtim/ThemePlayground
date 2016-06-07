@@ -183,6 +183,32 @@ section {
   }
 }
 
+section.truckStops {
+  .content {
+    padding-bottom: 0;
+  }
+
+  .showMore {
+    width: 100%;
+    border-top: 1px solid $color__primary_grey;
+    text-align: center;
+    color: $color__primary_red;
+    cursor: pointer;
+    padding-top: 5px;
+
+    span {
+      color: $color__primary_red;
+      display: block;
+      height: 50px;
+    }
+
+    span[aria-expanded="true"] {
+      transform: rotate(180deg);
+    }
+
+  }
+}
+
 .contest {
   .contestContainer {
     width: 100%;

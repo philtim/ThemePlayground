@@ -28,15 +28,13 @@ get_header(); ?>
       </section>
 
       <!-- #truckStops -->
-      <section id="truckStops" class="container truckStops">
-        <div class="content">
-          <?php get_template_part( 'partials/truckStops' ); ?>
-        </div>
-        <hr>
+      <section id="truckStops" class="truckStops">
+        <?php get_template_part( 'partials/truckStops' ); ?>
       </section>
 
       <!-- #truckInformation -->
       <section id="truckInformation" class="container truckInformation">
+        <hr>
         <div class="content">
           <?php get_template_part( 'partials/truckInformation' ); ?>
         </div>
