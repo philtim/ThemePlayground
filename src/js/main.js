@@ -31,7 +31,7 @@ var smoothScrolling = function smoothScrolling() {
     });
   });
 
-  $('a[href^="#"]', 'a[rel="home"]').on('click',function (e) {
+  $('a[href^="#"]').on('click',function (e) {
     e.preventDefault();
 
     var target = this.hash;
