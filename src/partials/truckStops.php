@@ -65,6 +65,132 @@ if ( $query->have_posts() ) {
             <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
             <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
           </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
         </div>
 
       </div>
