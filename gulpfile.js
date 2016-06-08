@@ -26,12 +26,12 @@ var projectURL = 'localhost/fischertruck';
 var productURL = './';
 
 var pathdir = {
-    'src': './src',
-    'dist': './dist',
-    'js': './src/js/**/*.js',
-    'sass': './src/sass/**/*.scss',
-    'php': './src/**/*.php',
-    'languages': './src/languages/**'
+  'src': './src',
+  'dist': './dist',
+  'js': './src/js/**/*.js',
+  'sass': './src/sass/**/*.scss',
+  'php': './src/**/*.php',
+  'languages': './src/languages/**'
 };
 
 var vendorLibs = {
@@ -57,17 +57,17 @@ var imagesDestination = pathdir.dist + '/assets/img/'; // Destination folder of 
 // Browsers you care about for autoprefixing.
 // Browserlist https://github.com/ai/browserslist
 const AUTOPREFIXER_BROWSERS = [
-    'last 2 version',
-    '> 1%',
-    'ie >= 9',
-    'ie_mob >= 10',
-    'ff >= 30',
-    'chrome >= 34',
-    'safari >= 7',
-    'opera >= 23',
-    'ios >= 7',
-    'android >= 4',
-    'bb >= 10'
+  'last 2 version',
+  '> 1%',
+  'ie >= 9',
+  'ie_mob >= 10',
+  'ff >= 30',
+  'chrome >= 34',
+  'safari >= 7',
+  'opera >= 23',
+  'ios >= 7',
+  'android >= 4',
+  'bb >= 10'
 ];
 
 
@@ -103,6 +103,7 @@ var del = require('del');
 var ftp = require('vinyl-ftp');
 var minimist = require('minimist');
 var args = minimist(process.argv.slice(2));
+var plumber = require('gulp-plumber');
 
 /**
  * Task: `browser-sync`.
@@ -115,29 +116,29 @@ var args = minimist(process.argv.slice(2));
  *    3. You may define a custom port
  *    4. You may want to stop the browser from openning automatically
  */
-gulp.task('browser-sync', function() {
-    browserSync.init({
+gulp.task('browser-sync', function () {
+  browserSync.init({
 
-        // For more options
-        // @link http://www.browsersync.io/docs/options/
+    // For more options
+    // @link http://www.browsersync.io/docs/options/
 
-        notify: false,
+    notify: false,
 
-        // Project URL.
-        proxy: projectURL,
+    // Project URL.
+    proxy: projectURL,
 
-        // `true` Automatically open the browser with BrowserSync live server.
-        // `false` Stop the browser from automatically opening.
-        open: true,
+    // `true` Automatically open the browser with BrowserSync live server.
+    // `false` Stop the browser from automatically opening.
+    open: true,
 
-        // Inject CSS changes.
-        // Commnet it to reload browser for every CSS change.
-        injectChanges: true
+    // Inject CSS changes.
+    // Commnet it to reload browser for every CSS change.
+    injectChanges: true
 
-        // Use a specific port (instead of the one auto-detected by Browsersync).
-        // port: 7000,
+    // Use a specific port (instead of the one auto-detected by Browsersync).
+    // port: 7000,
 
-    });
+  });
 });
 
 
@@ -155,40 +156,41 @@ gulp.task('browser-sync', function() {
  *    6. Minifies the CSS file and generates style.min.css
  *    7. Injects CSS or reloads the browser via browserSync
  */
-gulp.task('styles', function() {
+gulp.task('styles', function () {
   return gulp.src(pathdir.sass)
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            errLogToConsole: true,
-            outputStyle: 'compact',
-            //outputStyle: 'compressed',
-            // outputStyle: 'nested',
-            // outputStyle: 'expanded',
-            precision: 10
-        }))
-        .on('error', console.error.bind(console))
-        .pipe(sourcemaps.write({ includeContent: false }))
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true,
+      outputStyle: 'compact',
+      //outputStyle: 'compressed',
+      // outputStyle: 'nested',
+      // outputStyle: 'expanded',
+      precision: 10
+    }))
+    .on('error', console.error.bind(console))
+    .pipe(sourcemaps.write({includeContent: false}))
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
 
     .pipe(sourcemaps.write(pathdir.dist))
-        .pipe(lineec())
-        .pipe(gulp.dest(pathdir.dist))
+    .pipe(lineec())
+    .pipe(gulp.dest(pathdir.dist))
 
     .pipe(filter('**/*.css'))
-        .pipe(mmq({ log: true }))
+    .pipe(mmq({log: true}))
 
     .pipe(browserSync.stream())
 
-    .pipe(rename({ suffix: '.min' }))
-        .pipe(minifycss({
-            maxLineLen: 10
-        }))
-        .pipe(lineec())
-        .pipe(gulp.dest(pathdir.dist))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss({
+      maxLineLen: 10
+    }))
+    .pipe(lineec())
+    .pipe(gulp.dest(pathdir.dist))
 
     .pipe(filter('**/*.css'))
-        .pipe(browserSync.stream());
+    .pipe(browserSync.stream());
 });
 
 
@@ -203,18 +205,18 @@ gulp.task('styles', function() {
  *     3. Renames the JS file with suffix .min.js
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
-gulp.task('js', function() {
+gulp.task('js', function () {
   return gulp.src([vendorLibs.jQuery, vendorLibs.bootstrap, pathdir.js])
-        .pipe(concat('main.js'))
-        .pipe(lineec())
-        .pipe(gulp.dest(pathdir.dist))
-        .pipe(rename({
-            basename: 'main',
-            suffix: '.min'
-        }))
-        .pipe(uglify())
-        .pipe(lineec())
-        .pipe(gulp.dest(pathdir.dist+'/js/'));
+    .pipe(concat('main.js'))
+    .pipe(lineec())
+    .pipe(gulp.dest(pathdir.dist))
+    .pipe(rename({
+      basename: 'main',
+      suffix: '.min'
+    }))
+    .pipe(uglify())
+    .pipe(lineec())
+    .pipe(gulp.dest(pathdir.dist + '/js/'));
 });
 
 
@@ -231,15 +233,15 @@ gulp.task('js', function() {
  * This task will run only once, if you want to run it
  * again, do it with the command `gulp images`.
  */
-gulp.task('images', function() {
+gulp.task('images', function () {
   return gulp.src(imagesSRC)
-        .pipe(imagemin({
-            progressive: true,
-            optimizationLevel: 3, // 0-7 low-high
-            interlaced: true,
-            svgoPlugins: [{ removeViewBox: false }]
-        }))
-        .pipe(gulp.dest(pathdir.dist+'/assets/img/'));
+    .pipe(imagemin({
+      progressive: true,
+      optimizationLevel: 3, // 0-7 low-high
+      interlaced: true,
+      svgoPlugins: [{removeViewBox: false}]
+    }))
+    .pipe(gulp.dest(pathdir.dist + '/assets/img/'));
 });
 
 
@@ -252,18 +254,18 @@ gulp.task('images', function() {
  *     3. Applies wpPot with the variable set at the top of this file
  *     4. Generate a .pot file of i18n that can be used for l10n to build .mo file
  */
-gulp.task('translate', function() {
-    return gulp.src(projectPHPWatchFiles)
-        .pipe(sort())
-        .pipe(wpPot({
-            domain: text_domain,
-            destFile: destFile,
-            package: package,
-            bugReport: bugReport,
-            lastTranslator: lastTranslator,
-            team: team
-        }))
-        .pipe(gulp.dest(translatePath))
+gulp.task('translate', function () {
+  return gulp.src(projectPHPWatchFiles)
+    .pipe(sort())
+    .pipe(wpPot({
+      domain: text_domain,
+      destFile: destFile,
+      package: package,
+      bugReport: bugReport,
+      lastTranslator: lastTranslator,
+      team: team
+    }))
+    .pipe(gulp.dest(translatePath))
 });
 
 
@@ -272,9 +274,9 @@ gulp.task('translate', function() {
  *
  * Clean dist folder before copying new files over.
  */
-gulp.task('clean:dist', function() {
+gulp.task('clean:dist', function () {
   return del.sync([
-    pathdir.dist+'/**/*'
+    pathdir.dist + '/**/*'
   ]);
 });
 
@@ -291,21 +293,21 @@ gulp.task('copy:php', function () {
 
 gulp.task('copy:languages', function () {
   return gulp.src([pathdir.languages])
-    .pipe(gulp.dest(pathdir.dist+'/languages/'));
+    .pipe(gulp.dest(pathdir.dist + '/languages/'));
 });
 
 gulp.task('copy:fonts', function () {
   return gulp.src(['bower_components/font-awesome/fonts/**/*'
   ])
-    .pipe(gulp.dest(pathdir.dist+'/fonts/'));
+    .pipe(gulp.dest(pathdir.dist + '/fonts/'));
 });
 
 gulp.task('copy:misc', function () {
-  return gulp.src([pathdir.src+'/*.{png,txt,md}'])
+  return gulp.src([pathdir.src + '/*.{png,txt,md}'])
     .pipe(gulp.dest(pathdir.dist));
 });
 
-gulp.task('copy',[
+gulp.task('copy', [
   'copy:php',
   'copy:languages',
   'copy:fonts',
@@ -318,7 +320,7 @@ gulp.task('copy',[
  *
  * Provide different ways to serve content
  */
-gulp.task('serve', ['clean:dist', 'styles', 'js', 'images', 'copy', 'browser-sync', 'watch'], function() {
+gulp.task('serve', ['clean:dist', 'styles', 'js', 'images', 'copy', 'browser-sync', 'watch'], function () {
 
 });
 
@@ -361,7 +363,7 @@ gulp.task('default', ['build']);
  *
  * Tasks to deploy dist folder to remote host via ftp.
  */
-gulp.task('deploy:theme', function() {
+gulp.task('deploy:theme', function () {
   var remotePath = '/wp-content/themes/fischertruck/';
   var conn = ftp.create({
     host: 't7lab.com',
@@ -370,12 +372,12 @@ gulp.task('deploy:theme', function() {
     log: gutil.log
   });
 
-  return gulp.src([pathdir.dist+'/**/*'])
+  return gulp.src([pathdir.dist + '/**/*'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 });
 
-gulp.task('deploy:plugin', function() {
+gulp.task('deploy:plugin', function () {
   var remotePath = '/wp-content/plugins/';
   var conn = ftp.create({
     host: 't7lab.com',
@@ -384,7 +386,7 @@ gulp.task('deploy:plugin', function() {
     log: gutil.log
   });
 
-  return gulp.src([pathdir.dist+'/fischer-posttypes.php'])
+  return gulp.src([pathdir.dist + '/fischer-posttypes.php'])
     .pipe(conn.newer(remotePath))
     .pipe(conn.dest(remotePath));
 });

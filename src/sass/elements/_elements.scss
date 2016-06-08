@@ -51,6 +51,8 @@ img {
 
 .col {
   column-count: 1;
+  column-gap: 30px;
+  text-align: justify;
 
   @include breakpoint($sm) {
     column-count: 2;

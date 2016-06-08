@@ -1,7 +1,11 @@
 .acf-map {
   height: 400px;
   border: #ccc solid 1px;
-  margin: 20px 0;
+  margin: 20px 0 50px 0;
+
+  @include breakpoint($lg) {
+    height: 500px;
+  }
 }
 
 /* fixes potential theme css conflict */
