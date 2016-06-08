@@ -171,7 +171,7 @@ section:not(.masthead) {
 @media screen and (max-width:767px) {
   .container {
     padding-left: 0;
-    pardding-right: 0;
+    padding-right: 0;
   }
 }
 
@@ -181,6 +181,48 @@ section {
     width: 100%;
     overflow: hidden;
     @include clearfix();
+  }
+}
+
+.table {
+
+  &.table-striped {
+    .row:nth-child(odd) {
+      background: rgba(227,227,227,0.5);
+    }
+
+    .row.header {
+      background: none;
+      border-bottom: 2px solid $color__primary_grey;
+    }
+  }
+
+  .invertHighlight {
+    .row:nth-child(even) {
+      background: rgba(227,227,227,0.5);
+    }
+
+    .row:nth-child(odd) {
+      background: inherit;
+    }
+  }
+
+  .row {
+
+    &.header {
+      font-weight: bold;
+    }
+
+    margin-bottom: 10px;
+    padding: 7px 0;
+  }
+
+
+  @include breakpoint($xs) {
+    .address,
+    .hints {
+      margin-top: 10px;
+    }
   }
 }
 
@@ -201,6 +243,7 @@ section.truckStops {
       color: $color__primary_red;
       display: block;
       height: 50px;
+      line-height: 50px;
     }
 
     span[aria-expanded="true"] {

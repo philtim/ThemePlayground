@@ -10,7 +10,7 @@ if($query -> have_posts()) {
 
     echo '<div class="copy col-xs-12">';
     echo '<p class="col">';
-    echo strip_tags( nl2br( get_the_content( '' ) ), "<p>" );
+    echo strip_tags( nl2br( get_the_content( '' ) ), "<a>" );
     echo '</p>';
     echo '</div>';
 

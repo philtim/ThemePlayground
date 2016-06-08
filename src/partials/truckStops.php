@@ -21,85 +21,60 @@ if ( $query->have_posts() ) {
     <div class="content">
       <h2>Next Truck Stops</h2>
 
-      <div class="row">
-        <!-- Build table with dates -->
-        <div class="col-xs-12 col-lg-5">
-          <!--              --><?php
-          //              $counter = 0;
-          //              foreach($stopAddresses as &$location) {?>
-          <!--                <div class="marker" data-lat="--><?php //echo $location['lat']; ?><!--" data-lng="-->
-          <?php //echo $location['lng'];?><!--">-->
-          <!--                  <h4>--><?php //echo $stopDates[$counter]; ?><!--</h4>-->
-          <!--                  <p class="address">--><?php //echo $location['address']; ?><!--</p>-->
-          <!--                </div>-->
-          <!--                --><?php
-          //                $counter++;
-          //              }
-          //              ?>
-
-
-          <div class="timeTable">
-
-            <table class="table forum table-striped">
-              <thead>
-                <tr>
-                  <th class="cell-stat">Datum</th>
-                  <th class="cell-stat">Uhrzeit</th>
-                  <th class="cell-stat">Ort</th>
-                  <th class="cell-stat-2x">Beschreibung</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>20. Juni 2016</td>
-                  <td>ab 12:00 Uhr</td>
-                  <td><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen<br></td>
-
-                  <td>Hinweise zu Ansprechpartner, Aktionen, etc.</td>
-                </tr>
-                <tr>
-                  <td>20. Juni 2016</td>
-                  <td>ab 12:00 Uhr</td>
-                  <td>Lorem Ipsum Mark<br><br>Musterstrasse 2<br>12345 Testhausen<br></td>
-
-                  <td>Hinweise zu Ansprechpartner, Aktionen, etc.</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div id="collapseExample" class="collapse">
-              <table class="table forum table-striped">
-                <tbody>
-                  <tr>
-                    <td>20. Juni 2016</td>
-                    <td>ab 12:00 Uhr</td>
-                    <td>Lorem Ipsum Mark<br><br>Musterstrasse 2<br>12345 Testhausen<br></td>
-
-                    <td>Hinweise zu Ansprechpartner, Aktionen, etc.</td>
-                  </tr>
-                  <tr>
-                    <td>20. Juni 2016</td>
-                    <td>ab 12:00 Uhr</td>
-                    <td>Lorem Ipsum Mark<br><br>Musterstrasse 2<br>12345 Testhausen<br></td>
-
-                    <td>Hinweise zu Ansprechpartner, Aktionen, etc.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-
-          <div class="showMore">
-            <span type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="fa fa-lg fa-chevron-down">
-            </span>
-          </div>
-
+      <div class="table forum table-striped">
+        <div class="header / row hidden-xs">
+          <div class="date / col-xs-12 col-sm-2">Datum</div>
+          <div class="time / col-xs-12 col-sm-2">Uhrzeit</div>
+          <div class="address / col-xs-12 col-sm-4">Addresse</div>
+          <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+        </div>
+        <div class="row">
+          <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+          <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+          <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+          <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+          <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+        </div>
+        <div class="row">
+          <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+          <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+          <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+          <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+          <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
         </div>
 
+        <div id="hiddenTimeSlots" class="timeslots collapse invertHighlight">
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+          <div class="row">
+            <div class="date / hidden-xs col-sm-2">20. Juni 2016</div>
+            <div class="time / hidden-xs col-sm-2">12:00 Uhr</div>
+            <div class="dateTime / hidden-sm hidden-md hidden-lg col-xs-12">20. Juni 2016 | 12:00 Uhr</div>
+            <div class="address / col-xs-12 col-sm-4"><strong>Lorem Ipsum Mark</strong><br>Musterstrasse 2<br>12345 Testhausen</div>
+            <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
+          </div>
+        </div>
 
       </div>
+
+      <div class="showMore">
+        <span type="button" data-toggle="collapse" data-target="#hiddenTimeSlots" aria-expanded="false" aria-controls="timeslots" class="fa fa-lg fa-chevron-down">
+        </span>
+      </div>
     </div>
+
   </div>
 
   <!-- Add location markers on map -->
