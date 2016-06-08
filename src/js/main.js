@@ -51,6 +51,8 @@ var smoothScrolling = function smoothScrolling() {
     $('#site-navigation .menu-toggle').removeClass('is-active');
 
   });
+
+  $('.player').YTPlayer();
 };
 
 var syncScrolling = function syncScrolling() {

@@ -183,7 +183,7 @@ section:not(.masthead) {
 
 section {
   .content {
-    padding: 0 15px 40px 15px;
+    padding: 0 15px 60px 15px;
     width: 100%;
     overflow: hidden;
     @include clearfix();
@@ -304,6 +304,11 @@ section.truckStops {
   }
 }
 
+.truckInformation {
+  iframe {
+    margin: 0 auto;
+  }
+}
 
 .truckExperience {
   .row {
@@ -321,5 +326,9 @@ section.truckStops {
   .text {
     padding-top: 10px;
     text-align: justify;
+
+    @include breakpoint($sm) {
+      padding-top: 0;
+    }
   }
 }

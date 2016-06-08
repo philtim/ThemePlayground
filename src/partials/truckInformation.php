@@ -13,3 +13,24 @@
 //            }
 ?>
 <h2>TruckTour inside</h2>
+
+
+<!--  <div class="col-xs-12">-->
+<!--    <div id="x" class="player"-->
+<!--         data-property="{-->
+<!--         videoURL:'http://youtu.be/KKQfim1IJLM',-->
+<!--         containment:'self',-->
+<!--         addRaster:true,-->
+<!--         autoPlay:true,-->
+<!--         showControls:false,-->
+<!--         mute:true,-->
+<!--         startAt:0,-->
+<!--         opacity:1}">-->
+<!--    </div>-->
+<!--  </div>-->
+
+<div class="row">
+  <div class="col-xs-12">
+    <iframe class="center-block" width="560" height="314" src="https://www.youtube.com/embed/KKQfim1IJLM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
