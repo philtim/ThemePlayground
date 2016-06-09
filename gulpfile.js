@@ -206,7 +206,7 @@ gulp.task('styles', function () {
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
 gulp.task('js', function () {
-  return gulp.src([vendorLibs.jQuery, vendorLibs.bootstrap, pathdir.js])
+  return gulp.src([vendorLibs.bootstrap, pathdir.js])
     .pipe(concat('main.js'))
     .pipe(lineec())
     .pipe(gulp.dest(pathdir.dist))
