@@ -1,27 +1,30 @@
 <h2>Das Truck Erlebnis</h2>
 
-<div class="row">
+<div class="row / vertical-center">
   <div class="text / col-xs-12 col-sm-6">
+    <p>
     Der fischer Truck ist einzigartig und multifunktional: mobile fischer AKADEMIE für Profis, Ausstellungscenter für die vielfältigen Befestigungslösungen Ihres Befestigungsexperten und eine einzigartige Erlebniswelt im und rund um den fischer Truck. Erleben Sie die geballte Form der Befestigungspower von fischer.
+    </p>
   </div>
   <div class="image / col-xs-12 col-sm-6">
-    <img src="http://<?php echo $_SERVER['HTTP_HOST'] ?>/fischertruck/wp-content/uploads/2016/06/fischer_truck.jpg" alt="">
+    <img src="http://<?php echo $_SERVER['HTTP_HOST'] ?>/fischertruck/wp-content/uploads/2016/06/truck.jpg" alt="">
   </div>
 </div>
 
-<div class="row">
-  <div class="text / col-xs-12 col-sm-push-6 col-sm-6">In Zusammenarbeit mit den fischer Handelspartnern erfahren Profis in kleinen Gruppen alles Wichtige und Wissenswerte rund um die Befestigungstechnik und die neuesten Befestigungslösungen von fischer in Theorie und Praxis, vermittelt von erfahrenen Trainern der fischer AKADEMIE. Vertiefen Sie Ihr Wissen, holen Sie sich wertvolle Empfehlungen der Befestigungsexperten und testen Sie unsere Produkte vor Ort. Der fischer Truck lädt als mobiles Ausstellungs-Center zum Informieren, Testen und Gewinnen ein.
+<div class="row vertical-center">
+  <div class="text / col-xs-12 col-sm-push-6 col-sm-6">
+    <p>In Zusammenarbeit mit den fischer Handelspartnern erfahren Profis in kleinen Gruppen alles Wichtige und Wissenswerte rund um die Befestigungstechnik und die neuesten Befestigungslösungen von fischer in Theorie und Praxis, vermittelt von erfahrenen Trainern der fischer AKADEMIE. Vertiefen Sie Ihr Wissen, holen Sie sich wertvolle Empfehlungen der Befestigungsexperten und testen Sie unsere Produkte vor Ort. Der fischer Truck lädt als mobiles Ausstellungs-Center zum Informieren, Testen und Gewinnen ein.</p>
   </div>
   <div class="image / col-xs-12 col-sm-pull-6 col-sm-6">
-    <img src="http://<?php echo $_SERVER['HTTP_HOST'] ?>/fischertruck/wp-content/uploads/2016/06/fischer_profi.jpg" alt="">
+    <img src="http://<?php echo $_SERVER['HTTP_HOST'] ?>/fischertruck/wp-content/uploads/2016/06/profi.jpg" alt="">
   </div>
 </div>
 
-<div class="row">
-  <div class="text / col-xs-12 col-sm-6">Erleben Sie die Vielfalt der Befestigungslösungen, für jede Anwendung und für jeden Baustoff. Entdecken Sie unsere Innovationen, lassen Sie sich beraten und profitieren Sie vom Wissen der fischer Befestigungsexperten. Schauen Sie vorbei, wir bieten Ihnen bei den fischer Truck Stops Befestigungstechnik mit einem einzigartigen Erlebniswert: Unterhaltung für die Kinder, Leckeres für die Familie.
+<div class="row vertical-center">
+  <div class="text / col-xs-12 col-sm-6"><p>Erleben Sie die Vielfalt der Befestigungslösungen, für jede Anwendung und für jeden Baustoff. Entdecken Sie unsere Innovationen, lassen Sie sich beraten und profitieren Sie vom Wissen der fischer Befestigungsexperten. Schauen Sie vorbei, wir bieten Ihnen bei den fischer Truck Stops Befestigungstechnik mit einem einzigartigen Erlebniswert: Unterhaltung für die Kinder, Leckeres für die Familie.</p>
   </div>
   <div class="image / col-xs-12 col-sm-6">
-    <img src="http://<?php echo $_SERVER['HTTP_HOST'] ?>/fischertruck/wp-content/uploads/2016/06/fischer_rondell.jpg" alt="">
+    <img src="http://<?php echo $_SERVER['HTTP_HOST'] ?>/fischertruck/wp-content/uploads/2016/06/rondell.jpg" alt="">
   </div>
 </div>
 

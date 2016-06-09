@@ -323,31 +323,76 @@ section.truckStops {
     width: 100%;
     height: 93%;
   }
+}
 
-  //iframe {
-  //  margin: 0 auto;
-  //}
+.vertical-center {
+  @include breakpoint($sm) {
+    /* Make it a flex container */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+    -webkit-align-items : center;
+    -moz-box-align : center;
+    -ms-flex-align : center;
+    align-items : center;
+
+    /* In legacy web browsers such as Firefox 9
+       we need to specify the width of the flex container */
+    width: 100%;
+
+    /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+       hence the bootstrap's container won't be aligned to the center anymore.
+
+       Therefore, we should use the following declarations to get it centered again */
+    -webkit-box-pack : center;
+    -moz-box-pack : center;
+    -ms-flex-pack : center;
+    -webkit-justify-content : center;
+    justify-content : center;
+  }
 }
 
 .truckExperience {
   .row {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+
+    @include breakpoint($xs) {
+      &:not(:last-child):after {
+        display: block;
+        width: 25%;
+        height: 2px;
+        background: $color__primary_grey;
+        margin: 40px 20px;
+        float: left;
+      }
+    }
+
+
+    @include breakpoint($sm) {
+      margin-bottom: 40px;
+    }
+
+    &:nth-child(odd) .text {
+      @include breakpoint($sm) {
+        text-align: right;
+      }
+    }
   }
 
   .image {
     padding-top: 10px;
 
     @include breakpoint($sm) {
-      padding: 0;
+      padding-top: 0;
     }
   }
 
   .text {
-    padding-top: 10px;
-    text-align: justify;
-
-    @include breakpoint($sm) {
-      padding-top: 0;
-    }
+    padding-top: 0;
   }
 }
