@@ -62,11 +62,10 @@ get_header(); ?>
         <div class="content">
           <?php get_template_part( 'partials/contest' ); ?>
         </div>
-        <hr>
       </section>
 
       <!-- #socialFeed -->
-      <section id="contactform" class="container contactform">
+      <section id="contact" class="contact">
         <div class="content">
           <?php get_template_part( 'partials/contactform' ); ?>
         </div>
