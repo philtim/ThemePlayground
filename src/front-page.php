@@ -58,10 +58,8 @@ get_header(); ?>
       </section>
 
       <!-- #contest -->
-      <section id="contest" class="container contest">
-        <div class="content">
-          <?php get_template_part( 'partials/contest' ); ?>
-        </div>
+      <section id="contest" class="contest">
+        <?php get_template_part( 'partials/contest' ); ?>
       </section>
 
       <!-- #socialFeed -->

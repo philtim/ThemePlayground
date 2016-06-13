@@ -161,14 +161,13 @@ gulp.task('styles', function () {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
-      errLogToConsole: true,
       outputStyle: 'compact',
       //outputStyle: 'compressed',
       // outputStyle: 'nested',
       // outputStyle: 'expanded',
       precision: 10
     }))
-    .on('error', console.error.bind(console))
+    .on('error', sass.logError)
     .pipe(sourcemaps.write({includeContent: false}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
@@ -239,7 +238,7 @@ gulp.task('images', function () {
       progressive: true,
       optimizationLevel: 3, // 0-7 low-high
       interlaced: true,
-      svgoPlugins: [{removeViewBox: false}]
+      svgPlugins: [{removeViewBox: false}]
     }))
     .pipe(gulp.dest(pathdir.dist + '/assets/img/'));
 });
