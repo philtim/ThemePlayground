@@ -191,6 +191,11 @@ section {
 }
 
 .table {
+  margin-top: 30px;
+
+  @include breakpoint($xs) {
+    border-top: 1px solid $color__primary_grey;
+  }
 
   &.table-striped {
     .row:nth-child(odd) {
@@ -215,6 +220,25 @@ section {
 
   .row {
 
+    .content {
+      margin: 0;
+      padding: 0;
+
+      strong, b {
+        font-weight: normal;
+      }
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    @include breakpoint($sm) {
+      .title {
+        display: none;
+      }
+    }
+
     &.header {
       font-weight: bold;
     }
@@ -226,7 +250,8 @@ section {
 
   @include breakpoint($xs) {
     .address,
-    .hints {
+    .hints,
+    .contactperson {
       margin-top: 10px;
     }
   }
