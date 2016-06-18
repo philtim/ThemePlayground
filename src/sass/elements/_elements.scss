@@ -59,7 +59,7 @@ img {
   }
 
   @include breakpoint($lg) {
-    column-count: 3;
+    column-count: 2;
   }
 }
 

@@ -261,6 +261,11 @@ section.truckStops {
 
 .contest {
 
+  &Form {
+    margin: 0 auto;
+
+  }
+
   .noPadding {
     padding-bottom: 0;
   }
@@ -309,7 +314,7 @@ section.truckStops {
     ul {
       @include clearfix();
       list-style: none;
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
 
       li {

@@ -31,18 +31,23 @@
 <div class="container">
   <div class="content">
 
-    <div class="prices / row">
-      <ul>
-        <li class="col-xs-12 col-sm-4"><img src="http://localhost/fischertruck/wp-content/uploads/2016/06/price01.png" alt=""><span>1. GoPro Hero 4 black</span></li>
-        <li class="col-xs-12 col-sm-4"><img src="http://localhost/fischertruck/wp-content/uploads/2016/06/price02.png" alt=""><span>2. Drone Video Foto HD Kamera</span></li>
-        <li class="col-xs-12 col-sm-4"><img src="http://localhost/fischertruck/wp-content/uploads/2016/06/price03.png" alt=""><span>3. fischertechnik Profi Dynamik XL</span></li>
-      </ul>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6"><div class="contestForm">
+          <h3>Jetzt mitmachen und Gewinnen</h3>
+          <?php echo do_shortcode('[contact-form-7 id="93" title="Gewinnspiel"]') ?>
+        </div></div>
+      <div class="col-xs-12 col-sm-6"><div class="prices">
+          <ul>
+            <li class=""><img src="http://localhost/fischertruck/wp-content/uploads/2016/06/price01.png" alt=""><span>1. GoPro Hero 4 black</span></li>
+            <li class=""><img src="http://localhost/fischertruck/wp-content/uploads/2016/06/price02.png" alt=""><span>2. Drone Video Foto HD Kamera</span></li>
+            <li class=""><img src="http://localhost/fischertruck/wp-content/uploads/2016/06/price03.png" alt=""><span>3. fischertechnik Profi Dynamik XL</span></li>
+          </ul>
+        </div></div>
     </div>
 
-    <div class="contestForm">
-      <h3>Jetzt mitmachen und Gewinnen</h3>
-      <?php echo do_shortcode('[contact-form-7 id="93" title="Gewinnspiel"]') ?>
-    </div>
+
+
+
 
 
 
