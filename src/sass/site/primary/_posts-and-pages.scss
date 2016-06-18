@@ -209,11 +209,11 @@ section {
   }
 
   .invertHighlight {
-    .row:nth-child(even) {
+    .row:nth-child(odd) {
       background: rgba(227,227,227,0.5);
     }
 
-    .row:nth-child(odd) {
+    .row:nth-child(even) {
       background: inherit;
     }
   }
