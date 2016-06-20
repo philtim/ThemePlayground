@@ -86,7 +86,8 @@
     {
       // create info window
       var infowindow = new google.maps.InfoWindow({
-        content		: $marker.html()
+        content		: $marker.html(),
+        maxWidth: 200
       });
 
       // show info window when marker is clicked

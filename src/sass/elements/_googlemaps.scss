@@ -12,3 +12,9 @@
 .acf-map img {
   max-width: inherit !important;
 }
+
+.marker {
+  .content {
+    max-width: 250px;
+  }
+}

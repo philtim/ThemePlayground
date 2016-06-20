@@ -175,20 +175,27 @@ if ( $mainQuery->have_posts() ) {
 
 </div>
 
-<!-- Add location markers on map -->
-<!--  <div class="mapsWrapper / fullwidth">-->
-<!--    <div class="acf-map">-->
-<!--      --><?php
-//      $counter = 0;
-//      foreach ( $stopAddresses as &$location ) { ?>
-<!--        <div class="marker" data-lat="--><?php //echo $location['lat']; ?><!--" data-lng="--><?php //echo $location['lng']; ?><!--">-->
-<!--          <h4>--><?php //echo $stopDates[ $counter ]; ?><!--</h4>-->
-<!--          <p class="address">--><?php //echo $location['address']; ?><!--</p>-->
-<!--        </div>-->
-<!--        --><?php
-//        $counter ++;
-//      }
-//      ?>
-<!--    </div>-->
-<!--  </div>-->
+<!-- Add location markers on map-->
+<div class="mapsWrapper / fullwidth">
+  <div class="acf-map">
+    <?php
+    foreach ( $truckStops as $stop ) {
+        $location = $stop->address;
+      ?>
+      <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+        <h4><?php echo $stopDates[ $counter ]; ?></h4>
+        <div class="content">
+          <div class="row">
+            <div class="col-xs-12"><span class="customer"><?php echo $stop->market; ?></span></div>
+            <div class="col-xs-12"><span class="date"><?php echo strftime( '%d. %B %Y', strtotime( $stop->date ) ) ?></span></div>
+            <div class="col-xs-12"><span class="time"><?php echo $stop->time; ?></span></div>
+            <div class="col-xs-12"><span class="address"><?php echo $stop->addressFormatted; ?></span></div>
+          </div>
+        </div>
+      </div>
+      <?php
+    }
+    ?>
+  </div>
+</div>
 
