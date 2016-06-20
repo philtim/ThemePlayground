@@ -197,24 +197,24 @@ section {
     border-top: 1px solid $color__primary_grey;
   }
 
+
   &.table-striped {
-    .row:nth-child(odd) {
+    .row {
       background: rgba(227,227,227,0.5);
+    }
+
+    > .row:nth-child(even) {
+      background-color: #fff;
+    }
+
+    > .invertHighlight:nth-child(odd) > .row:nth-child(even),
+    > .invertHighlight:nth-child(even) > .row:nth-child(odd) {
+      background-color: #fff;
     }
 
     .row.header {
       background: none;
       border-bottom: 2px solid $color__primary_grey;
-    }
-  }
-
-  .invertHighlight {
-    .row:nth-child(odd) {
-      background: rgba(227,227,227,0.5);
-    }
-
-    .row:nth-child(even) {
-      background: inherit;
     }
   }
 
@@ -224,8 +224,10 @@ section {
       margin: 0;
       padding: 0;
 
-      strong, b {
-        font-weight: normal;
+      @include breakpoint($xs) {
+        strong, b {
+          font-weight: normal;
+        }
       }
     }
 

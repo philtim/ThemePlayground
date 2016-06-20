@@ -8,7 +8,7 @@ class TruckStop {
   public $address;
 }
 
-$query      = new WP_Query( array( 'post_type' => 'truckstops' ) );
+$query      = new WP_Query( array( 'post_type' => 'truckstops', 'order' => 'ASC' ) );
 $truckStops = array();
 
 if ( $query->have_posts() ) {
@@ -62,7 +62,8 @@ if ( $mainQuery->have_posts() ) {
       <?php
 
       $stopCount   = count( $truckStops );
-      $breakCount  = 2;
+      // breakCount defines how many items are initially visible
+      $breakCount  = 7;
       $loopCounter = 0;
 
       foreach ( $truckStops as $stop ) {
@@ -75,7 +76,7 @@ if ( $mainQuery->have_posts() ) {
           <div class="date / col-sm-2">
             <span class="title">Datum und Uhrzeit</span>
             <div class="content">
-              <?php echo strftime( '%d. %B %Y', strtotime( $stop->date ) ) ?>
+              <strong><?php echo strftime( '%d. %B %Y', strtotime( $stop->date ) ) ?></strong>
               <br>
               <?php echo $stop->time ?>
             </div>
@@ -90,14 +91,15 @@ if ( $mainQuery->have_posts() ) {
             </div>
           </div>
           <div class="contactperson / col-xs-6 col-sm-3">
-            <span class="title">Ihr Ansprechpartner</span>
+            <span class="title <?php if ( empty( $stop->contactperson ) )
+              echo 'hidden' ?>">Ihr Ansprechpartner</span>
             <div class="content">
               <?php echo $stop->contactperson ?>
             </div>
           </div>
-          <div class="hints / col-xs-12 col-sm-4 <?php if ( empty( $stop->notes ) )
-            echo 'hidden' ?>">
-            <span class="title">Hinweise</span>
+          <div class="hints / col-xs-12 col-sm-4">
+            <span class="title <?php if ( empty( $stop->notes ) )
+              echo 'hidden' ?>">Hinweise</span>
             <div class="content">
               <?php echo $stop->notes ?>
             </div>
@@ -123,7 +125,7 @@ if ( $mainQuery->have_posts() ) {
               <div class="date / col-sm-2">
                 <span class="title">Datum und Uhrzeit</span>
                 <div class="content">
-                  <?php echo strftime( '%d. %B %Y', strtotime( $stop->date ) ) ?>
+                  <strong><?php echo strftime( '%d. %B %Y', strtotime( $stop->date ) ) ?></strong>
                   <br>
                   <?php echo $stop->time ?>
                 </div>
@@ -138,14 +140,15 @@ if ( $mainQuery->have_posts() ) {
                 </div>
               </div>
               <div class="contactperson / col-xs-6 col-sm-3">
-                <span class="title">Ihr Ansprechpartner</span>
+                <span class="title <?php if ( empty( $stop->contactperson ) )
+                  echo 'hidden' ?>">Ihr Ansprechpartner</span>
                 <div class="content">
                   <?php echo $stop->contactperson ?>
                 </div>
               </div>
-              <div class="hints / col-xs-12 col-sm-4 <?php if ( empty( $stop->notes ) )
-                echo 'hidden' ?>">
-                <span class="title">Hinweise</span>
+              <div class="hints / col-xs-12 col-sm-4">
+                <span class="title <?php if ( empty( $stop->notes ) )
+                  echo 'hidden' ?>">Hinweise</span>
                 <div class="content">
                   <?php echo $stop->notes ?>
                 </div>
