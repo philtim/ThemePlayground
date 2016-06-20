@@ -63,7 +63,7 @@ if ( $mainQuery->have_posts() ) {
 
       $stopCount   = count( $truckStops );
       // breakCount defines how many items are initially visible
-      $breakCount  = 7;
+      $breakCount  = 4;
       $loopCounter = 0;
 
       foreach ( $truckStops as $stop ) {
