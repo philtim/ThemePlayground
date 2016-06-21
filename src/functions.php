@@ -115,7 +115,7 @@ add_action( 'widgets_init', 'fischertruck_widgets_init' );
  */
 function fischertruck_scripts() {
 
-  wp_enqueue_style( 'googlefonts', 'https://fonts.googleapis.com/css?family=Muli' );
+  wp_enqueue_style( 'googlefonts', 'https://fonts.googleapis.com/css?family=Muli|Share:700' );
   wp_enqueue_style( 'fischertruck-style', get_stylesheet_uri() );
 
   wp_enqueue_script( 'jQuery', 'https://code.jquery.com/jquery-2.2.4.min.js' );
