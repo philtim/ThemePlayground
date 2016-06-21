@@ -17,7 +17,13 @@
 		<div class="site-info / container">
       <div class="row">
         <div class="logo / col-xs-12 col-sm-3">
-          <div class="logo">Logo</div>
+          <div class="logo">
+            <?php
+            if ( function_exists( 'the_custom_logo' ) ) {
+              the_custom_logo();
+            }
+            ?>
+          </div>
         </div>
         <div class="col-xs-12 col-sm-9">
 
