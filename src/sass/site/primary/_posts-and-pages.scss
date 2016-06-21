@@ -425,8 +425,10 @@ section.truckStops {
   }
 }
 
-.site-info {
+.site-footer {
   background: $color__primary_red;
+}
+.site-info {
   padding: 5px 15px;
   a, span {
     color: white;
@@ -622,4 +624,19 @@ div.wpcf7-validation-errors {
   background: #ac2925;
   color: white;
   margin-top: 10px;
+}
+
+
+footer {
+  padding: 0;
+  ul {
+    @include clearfix();
+    margin: 10px 0 10px 0;
+    padding: 0;
+    li {
+      list-style: none;
+      float: left;
+      margin-right: 25px;
+    }
+  }
 }
