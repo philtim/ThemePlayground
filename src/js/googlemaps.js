@@ -13,9 +13,6 @@
    *  @return	n/a
    */
 
-  var ttMarkers = [];
-  var ttInfoWindows = [];
-
   function new_map( $el ) {
 
     // var
@@ -31,7 +28,7 @@
 
 
     // create map
-    var map = new google.maps.Map( $el[0], args);
+    map = new google.maps.Map( $el[0], args);
 
 
     // add a markers reference
@@ -108,7 +105,12 @@
       });
 
       google.maps.event.addDomListener(window, 'resize', function() {
-        center_map(map);
+
+        if (mapCenter) {
+          map.setCenter(mapCenter);
+        } else if (mapBounds) {
+          map.fitBounds(mapBounds);
+        }
       });
     }
 
@@ -147,12 +149,16 @@
       // set center of map
       map.setCenter( bounds.getCenter() );
       map.setZoom( 16 );
+      mapCenter = map.getCenter();
     }
     else
     {
       // fit to bounds
       map.fitBounds( bounds );
+      mapBounds = bounds;
     }
+
+
 
   }
 
@@ -171,8 +177,11 @@
 // global var
   var map = null;
   var ttMarkers = ttMarkers || [];
+  var ttInfoWindows = [];
   var markerRows = null;
   var markerRows = [];
+  var mapCenter;
+  var mapBounds;
 
   // function to setActiveRow
   var setActiveRow = function setActiveRow(id) {
