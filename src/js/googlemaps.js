@@ -13,11 +13,13 @@
    *  @return	n/a
    */
 
+  var ttMarkers = [];
+  var ttInfoWindows = [];
+
   function new_map( $el ) {
 
     // var
     var $markers = $el.find('.marker');
-
 
     // vars
     var args = {
@@ -71,6 +73,7 @@
 
     // var
     var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
+    var markerId = $marker.attr('data-markerid');
 
     // create marker
     var marker = new google.maps.Marker({
@@ -80,6 +83,7 @@
 
     // add to array
     map.markers.push( marker );
+    ttMarkers.push(marker);
 
     // if marker contains HTML, add it to an infoWindow
     if( $marker.html() )
@@ -90,11 +94,17 @@
         maxWidth: 200
       });
 
+      ttInfoWindows.push(infowindow);
+
       // show info window when marker is clicked
       google.maps.event.addListener(marker, 'click', function() {
-
+        closeInfoWindows();
         infowindow.open( map, marker );
+        setActiveRow(markerId);
+      });
 
+      google.maps.event.addListener(infowindow,'closeclick',function(){
+        closeInfoWindows();
       });
 
       google.maps.event.addDomListener(window, 'resize', function() {
@@ -160,15 +170,45 @@
    */
 // global var
   var map = null;
+  var ttMarkers = ttMarkers || [];
+  var markerRows = null;
+  var markerRows = [];
+
+  // function to setActiveRow
+  var setActiveRow = function setActiveRow(id) {
+    removeActiveClass();
+    console.log('id is', id);
+    $(markerRows[id]).addClass('active');
+  };
+
+  // function to close all infowindows
+  var closeInfoWindows = function closeInfoWindows() {
+    ttInfoWindows.forEach(function (el) {
+      el.close();
+    });
+    removeActiveClass();
+  };
+
+  var removeActiveClass = function removeActiveClass() {
+    $(markerRows).removeClass('active');
+  };
+
 
   $(document).ready(function(){
 
     $('.acf-map').each(function(){
-
       // create map
       map = new_map( $(this) );
-
     });
+
+    markerRows = $('[data-mapTarget]');
+    markerRows.each(function(){
+      $(this).on('click', function (ev) {
+        var markerIndex = $(ev.currentTarget).data('maptarget');
+        google.maps.event.trigger(ttMarkers[markerIndex], 'click');
+      });
+    });
+
 
   });
 })(jQuery);

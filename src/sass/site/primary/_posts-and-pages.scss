@@ -201,16 +201,28 @@ section {
 
   &.table-striped {
     .row {
-      background: rgba(227,227,227,0.5);
+      background: rgba(227,227,227,.5);
+      cursor: pointer;
+
+      &.active {
+        background: rgba(242, 22, 0, .7);
+        color: white;
+      }
     }
 
     > .row:nth-child(even) {
       background-color: #fff;
+      &.active {
+        background: rgba(242, 22, 0, .7);
+      }
     }
 
     > .invertHighlight:nth-child(odd) > .row:nth-child(even),
     > .invertHighlight:nth-child(even) > .row:nth-child(odd) {
       background-color: #fff;
+      &.active {
+        background: rgba(242, 22, 0, .7);
+      }
     }
 
     .row.header {

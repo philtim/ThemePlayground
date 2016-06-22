@@ -13,10 +13,12 @@ $query      = new WP_Query( $args );
 $truckStops = array();
 
 if ( $query->have_posts() ) {
+  $idCounter = 0;
   while ( $query->have_posts() ) {
     $stop = new TruckStop();
     $query->the_post();
 
+    $stop->id               = $idCounter;
     $stop->market           = get_field( 'truckstop_market' );
     $stop->address          = get_field( 'truckstop_address' );
     $stop->addressFormatted = get_field( 'truckstop_address_formatted' );
@@ -26,6 +28,7 @@ if ( $query->have_posts() ) {
     $stop->notes            = get_field( 'truckstop_notes' );
 
     array_push( $truckStops, $stop );
+    $idCounter++;
   }
   wp_reset_query();
 }
@@ -51,7 +54,7 @@ if ( $mainQuery->have_posts() ) {
     <h2><?php echo $mainTitle ?></h2>
     <p><?php echo $mainContent ?></p>
 
-    <div class="table forum table-striped">
+    <div id="stopTable" class="table forum table-striped">
       <div class="header / row hidden-xs">
         <div class="date / col-xs-12 col-sm-2">Datum</div>
         <div class="address / col-xs-12 col-sm-3">Adresse</div>
@@ -59,9 +62,7 @@ if ( $mainQuery->have_posts() ) {
         <div class="hints / col-xs-12 col-sm-4">Hinweise</div>
       </div>
 
-
       <?php
-
       $stopCount   = count( $truckStops );
       // breakCount defines how many items are initially visible
       $breakCount  = 4;
@@ -73,7 +74,7 @@ if ( $mainQuery->have_posts() ) {
           break;
         }
         ?>
-        <div class="row" id="<?php echo 'Test' ?>">
+        <div class="row" data-mapTarget="<?php echo $stop->id ?>">
           <div class="date / col-sm-2">
             <span class="title">Datum und Uhrzeit</span>
             <div class="content">
@@ -112,7 +113,7 @@ if ( $mainQuery->have_posts() ) {
 
       <!--        show first seven entries -->
       <?php
-      $subArr = array_slice( $truckStops, $loopCounter );
+      $subArr = array_slice( $truckStops, $loopCounter-1 );
 
       if ( count( $subArr ) > 0 && $stopCount > $breakCount) {
 
@@ -122,7 +123,7 @@ if ( $mainQuery->have_posts() ) {
           <?php
           foreach ( $subArr as $stop ) {
             ?>
-            <div class="row" id="<?php echo 'Test' ?>">
+            <div class="row" data-mapTarget="<?php echo $stop->id ?>">
               <div class="date / col-sm-2">
                 <span class="title">Datum und Uhrzeit</span>
                 <div class="content">
@@ -183,7 +184,7 @@ if ( $mainQuery->have_posts() ) {
     foreach ( $truckStops as $stop ) {
         $location = $stop->address;
       ?>
-      <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+      <div class="marker" data-markerId="<?php echo $stop->id; ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
         <h4><?php echo $stopDates[ $counter ]; ?></h4>
         <div class="content">
           <div class="row">
