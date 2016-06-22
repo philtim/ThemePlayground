@@ -611,14 +611,13 @@ footer {
 
   .logo img {
     height: 40px;
-    margin-top: 20px;
+    margin-top: 12px;
     width: auto;
   }
   ul {
     @include clearfix();
-    margin: 7px 0 7px 0;
+    margin: 7px 0 0 0;
     padding: 0;
-    margin: 15px 0 0 15px;
 
     @include breakpoint($sm) {
       float: right;
