@@ -338,49 +338,20 @@ section.truckStops {
   .prices {
 
     .item {
-      height: 150px;
-      overflow: hidden;
-      cursor: pointer;
       margin-bottom: 30px;
 
       .contentWrapper {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        position: relative;
+        text-align: center;
       }
 
-      &:hover {
-        .bgImage {
-          transform: scale(1.3, 1.3);
-        }
-        span {
-          opacity: 1;
-          background: rgba(242, 22, 0, 0.75);
-        }
-      }
-
-      .bgImage {
-        height: 100%;
-        width: 100%;
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat;
-        position: absolute;
-        transition: transform ease-out 0.25s;
+      img {
+        max-height: 120px;
+        margin-bottom: 10px;
       }
 
       span {
-        position: absolute;
-        width: 100%;
-        height: 100%;
         text-align: center;
-        line-height: 150px;
-        background: rgba(242, 22, 0, 0);
-        color: white;
-        font-size: 1.5em;
-        transition: all ease-out 0.25s;
-        opacity: 0;
+        display: block;
       }
 
 
@@ -413,6 +384,10 @@ section.truckStops {
       h3 {
         font-size: 40px;
 
+        @include breakpoint($xs) {
+          font-size: 33px;
+        }
+
         strong {
           color: $color__primary_red;
         }
@@ -426,12 +401,12 @@ section.truckStops {
 }
 
 .site-footer {
-  background: $color__primary_red;
+  background: #fff;
 }
 .site-info {
   padding: 5px 15px;
   a, span {
-    color: white;
+    //color: white;
   }
 }
 
@@ -439,6 +414,10 @@ section.truckStops {
 
   .content {
     padding-bottom: 30px;
+  }
+
+  p {
+    margin-bottom: 30px;
   }
 
   .videoWrapper {
@@ -629,15 +608,34 @@ div.wpcf7-validation-errors {
 
 footer {
   padding: 0;
+
+  .logo img {
+    height: 40px;
+    margin-top: 20px;
+    width: auto;
+  }
   ul {
     @include clearfix();
-    margin: 10px 0 10px 0;
+    margin: 7px 0 7px 0;
     padding: 0;
-    float: right;
+    margin: 15px 0 0 15px;
+
+    @include breakpoint($sm) {
+      float: right;
+      margin-left: 0;
+    }
     li {
       list-style: none;
       float: left;
       margin-right: 25px;
+
+      span {
+        color: #8e8e8e;
+      }
+
+      a {
+        color: #8e8e8e;
+      }
     }
   }
 }

@@ -12,7 +12,11 @@
 //              wp_reset_query();
 //            }
 ?>
-<h2>TruckTour inside</h2>
+<h2>TourTruck inside</h2>
+
+<p>
+  Der fischer TourTruck von innen: mobile Akademie und Erlebnis-Location.
+</p>
 
 
 <!--    <div id="x" class="player"-->

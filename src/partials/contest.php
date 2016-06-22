@@ -1,32 +1,32 @@
 <div class="container">
   <div class="content noPadding">
-    <h2>fischer Tour Truck Gewinnspiel</h2>
+    <h2>fischer TourTruck Gewinnspiel</h2>
     <div class="description col">
-      Nehmen Sie an unserem Gewinnspiel teil und laden Sie Ihr Selfie mit dem fischer Tour Truck auf Instagram oder facebook unter dem Hashtag #fischerTourTruck hoch. Den Link zum Selfie können Sie dann gemeinsam mit Ihrer Anmeldung hier absenden.
-      Einmal monatlich werden dann unter allen Teilnehmenden tolle Preise verlost:
-    </div>
-    <div class="description">
-      Nächste Gewinnchance für alle Einsendungen bis zum 31.07.2016!
+      Nehmen Sie an unserem Gewinnspiel teil und laden Sie Ihr Selfie mit dem fischer TourTruck auf Instagram oder facebook unter dem Hashtag #fischerTourTruck hoch. Den Link zum Selfie können Sie dann gemeinsam mit Ihrer Anmeldung hier absenden.
+      Einmal monatlich werden dann unter allen Teilnehmenden tolle Preise verlost. Nächste Gewinnchance für alle Einsendungen bis zum 31.07.2016!
     </div>
     <div class="prices / row">
       <div class="item / col-xs-12 col-sm-4">
         <div class="contentWrapper">
-          <div class="bgImage" style="background-image: url(http://localhost/fischertruck/wp-content/uploads/2016/06/price01.png)"></div>
-          <span>1. Preis</span>
+          <img src="<?php echo wp_upload_dir()['url'] ?>/price01.png" alt="1. Preis - GoPro 4 Black Edition">
+          <span><strong>1. Preis</strong></span>
+          <span>GoPro Hero 4 Black Edition</span>
         </div>
       </div>
 
       <div class="item / col-xs-12 col-sm-4">
         <div class="contentWrapper">
-          <div class="bgImage" style="background-image: url(http://localhost/fischertruck/wp-content/uploads/2016/06/price02.png)"></div>
-          <span>2. Preis</span>
+          <img src="<?php echo wp_upload_dir()['url'] ?>/price02.png" alt="2. Preis - Drohne">
+          <span><strong>2. Preis</strong></span>
+          <span>Drone</span>
         </div>
       </div>
 
       <div class="item / col-xs-12 col-sm-4">
         <div class="contentWrapper">
-          <div class="bgImage" style="background-image: url(http://localhost/fischertruck/wp-content/uploads/2016/06/price03.png)"></div>
-          <span>3. Preis</span>
+          <img src="<?php echo wp_upload_dir()['url'] ?>/price03.png" alt="3. Preis - Fischer">
+          <span><strong>3. Preis</strong></span>
+          <span>fischertechnik Dynamic XL</span>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
   }
   ?>
   <div class="textContainer">
-    <h3>Schick uns Dein<br><strong>#fischertrucktour</strong>-Selfie</h3>
+    <h3>Schick uns Dein<br><strong>#fischerTourTruck</strong>-Selfie</h3>
   </div>
 </div>
 
@@ -58,7 +58,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-8"><div class="contestForm">
-        <h3>Jetzt mitmachen und Gewinnen</h3>
+        <h3>Jetzt mitmachen und gewinnen</h3>
         <?php echo do_shortcode('[contact-form-7 id="93" title="Gewinnspiel"]') ?>
       </div>
     </div>

@@ -17,32 +17,27 @@
 		<div class="site-info / container">
       <div class="row">
         <div class="logo / col-xs-12 col-sm-3">
-          <div class="logo">
-            <?php
-            if ( function_exists( 'the_custom_logo' ) ) {
-              the_custom_logo();
-            }
-            ?>
-          </div>
+            <a href="http://www.fischer.de" target="_blank">
+              <img src="//localhost:3000/fischertruck/wp-content/uploads/2016/05/fischer.png" class="custom-logo" alt="fischer - innovative solutions" itemprop="logo" srcset="//localhost:3000/fischertruck/wp-content/uploads/2016/05/fischer.png 373w, //localhost:3000/fischertruck/wp-content/uploads/2016/05/fischer-300x80.png 300w" sizes="(max-width: 373px) 100vw, 373px"></a>
         </div>
         <div class="col-xs-12 col-sm-9">
 
           <div class="row">
-            <div class="socialMedia / col-xs-123 col-sm-33">
+            <div class="socialMedia">
               <ul>
-                <li><span><i class="fa fa-lg fa-facebook" aria-hidden="true"></i> Facebook</span></li>
-                <li><span><i class="fa fa-lg fa-instagram" aria-hidden="true"></i> Instagram</span></li>
-                <li><span><i class="fa fa-lg fa-youtube" aria-hidden="true"></i> Youtube</span></li>
+                <li><a href="https://www.facebook.com/fischergruppe"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-youtube" aria-hidden="true"></i> Youtube</a></li>
               </ul>
             </div>
           </div>
 
           <div class="row">
-            <div class="links / col-xs-132 col-sm-33">
+            <div class="links">
               <ul>
-                <li><span>Datenschutz</span></li>
-                <li><span>Impressum</span></li>
-                <li><span>Allgemeine Geschäftsbedingungen</span></li>
+                <li><a href="http://fischer.de/de-DE/Rechtliches/Datenschutz" target="_blank">Datenschutz</a></li>
+                <li><a href="http://fischer.de/de-DE/Rechtliches/Impressum" target="_blank">Impressum</a></li>
+                <li><a href="http://fischer.de/-/media/fischer/fischer-de/PDFs/AGB.pdf" target="_blank">Allgemeine Geschäftsbedingungen</a></li>
               </ul>
             </div>
           </div>

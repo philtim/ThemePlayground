@@ -8,7 +8,8 @@ class TruckStop {
   public $address;
 }
 
-$query      = new WP_Query( array( 'post_type' => 'truckstops', 'order' => 'ASC' ) );
+$args = array( 'posts_per_page' => -1, 'post_type' => 'truckstops', 'order' => 'ASC' );
+$query      = new WP_Query( $args );
 $truckStops = array();
 
 if ( $query->have_posts() ) {
@@ -111,7 +112,7 @@ if ( $mainQuery->have_posts() ) {
 
       <!--        show first seven entries -->
       <?php
-      $subArr = array_slice( $truckStops, $loopCounter - 1 );
+      $subArr = array_slice( $truckStops, $loopCounter );
 
       if ( count( $subArr ) > 0 && $stopCount > $breakCount) {
 
