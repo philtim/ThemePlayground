@@ -96,6 +96,10 @@
         infowindow.open( map, marker );
 
       });
+
+      google.maps.event.addDomListener(window, 'resize', function() {
+        center_map(map);
+      });
     }
 
   }
