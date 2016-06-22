@@ -11,50 +11,44 @@
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info / container">
-      <div class="row">
-        <div class="logo / col-xs-12 col-sm-3">
-            <a href="http://www.fischer.de" target="_blank">
-              <img src="//localhost:3000/fischertruck/wp-content/uploads/2016/05/fischer.png" class="custom-logo" alt="fischer - innovative solutions" itemprop="logo" srcset="//localhost:3000/fischertruck/wp-content/uploads/2016/05/fischer.png 373w, //localhost:3000/fischertruck/wp-content/uploads/2016/05/fischer-300x80.png 300w" sizes="(max-width: 373px) 100vw, 373px"></a>
-        </div>
-        <div class="col-xs-12 col-sm-9">
-
-          <div class="row">
-            <div class="socialMedia">
-              <ul>
-                <li><a href="https://www.facebook.com/fischergruppe"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i> Facebook</a></li>
-                <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i> Instagram</a></li>
-                <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-youtube" aria-hidden="true"></i> Youtube</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="links">
-              <ul>
-                <li><a href="http://fischer.de/de-DE/Rechtliches/Datenschutz" target="_blank">Datenschutz</a></li>
-                <li><a href="http://fischer.de/de-DE/Rechtliches/Impressum" target="_blank">Impressum</a></li>
-                <li><a href="http://fischer.de/-/media/fischer/fischer-de/PDFs/AGB.pdf" target="_blank">Allgemeine Geschäftsbedingungen</a></li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-
-
-
-
-
-
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info / container">
+    <div class="row">
+      <div class="logo / col-xs-12 col-sm-3">
+        <a href="http://www.fischer.de" target="_blank">
+          <img src="<?php echo wp_upload_dir()['baseurl'] ?>/2016/05/fischer.png" class="custom-logo"
+               alt="fischer - innovative solutions" itemprop="logo"></a>
       </div>
+      <div class="col-xs-12 col-sm-9">
+
+        <div class="socialMedia">
+          <ul>
+            <li><a href="https://www.facebook.com/fischergruppe"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i>
+                Facebook</a></li>
+            <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i>
+                Instagram</a></li>
+            <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-youtube" aria-hidden="true"></i> Youtube</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="links">
+          <ul>
+            <li><a href="http://fischer.de/de-DE/Rechtliches/Datenschutz" target="_blank">Datenschutz</a></li>
+            <li><a href="http://fischer.de/de-DE/Rechtliches/Impressum" target="_blank">Impressum</a></li>
+            <li><a href="http://fischer.de/-/media/fischer/fischer-de/PDFs/AGB.pdf" target="_blank">Allgemeine Geschäftsbedingungen</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
 
 
-
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+  </div><!-- .site-info -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

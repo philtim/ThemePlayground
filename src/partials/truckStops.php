@@ -49,7 +49,7 @@ if ( $mainQuery->have_posts() ) {
 <div class="container">
   <div class="content">
     <h2><?php echo $mainTitle ?></h2>
-    <p class="col"><?php echo $mainContent ?></p>
+    <p><?php echo $mainContent ?></p>
 
     <div class="table forum table-striped">
       <div class="header / row hidden-xs">
