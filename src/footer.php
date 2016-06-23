@@ -25,11 +25,11 @@
 
         <div class="socialMedia">
           <ul>
-            <li><a href="https://www.facebook.com/fischergruppe"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i>
+            <li><a href="https://www.facebook.com/fischergruppe" target="_blank"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i>
                 Facebook</a></li>
-            <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i>
+            <li><a href="https://www.youtube.com/fischer" target="_blank"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i>
                 Instagram</a></li>
-            <li><a href="https://www.youtube.com/fischer"><i class="fa fa-lg fa-youtube" aria-hidden="true"></i> Youtube</a>
+            <li><a href="https://www.youtube.com/fischer" target="_blank"><i class="fa fa-lg fa-youtube" aria-hidden="true"></i> Youtube</a>
             </li>
           </ul>
         </div>
@@ -43,10 +43,7 @@
           </ul>
         </div>
       </div>
-      
     </div>
-
-
   </div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->

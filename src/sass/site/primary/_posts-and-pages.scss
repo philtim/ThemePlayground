@@ -525,7 +525,6 @@ section.truckStops {
 
 section.contact {
   background: #f3f1f1;
-  padding-bottom: 90px;
 
   h2 {
     background: $color__primary_red;
@@ -622,23 +621,41 @@ footer {
   padding: 0;
 
   .logo img {
-    height: 40px;
+    max-height: 30px;
     margin-top: 12px;
+    margin-bottom: 20px;
     width: auto;
+
+    @include breakpoint($md) {
+      max-height: 40px;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
   }
+
+  .socialMedia,
+  .links {
+    clear: both;
+  }
+
   ul {
     @include clearfix();
-    margin: 7px 0 0 0;
+    margin: 12px 0 0 0;
     padding: 0;
 
     @include breakpoint($sm) {
+      margin: 7px 0 0 0;
       float: right;
-      margin-left: 0;
     }
     li {
       list-style: none;
       float: left;
-      margin-right: 25px;
+      margin-right: 15px;
+      font-size: 13px;
+
+      @include breakpoint($md) {
+        margin-right: 25px;
+      }
 
       span {
         color: #8e8e8e;

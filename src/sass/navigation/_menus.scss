@@ -74,7 +74,11 @@
 
 	a {
 		display: block;
-    padding: 0 10px;
+    padding: 0 7px;
+
+    @include breakpoint($md) {
+      padding: 0 10px;
+    }
 
     &:active,
     &:focus {
@@ -165,8 +169,13 @@
   .site-title {
     .custom-logo-link {
       img {
-        max-height: 40px;
+        max-height: 30px;
         width: auto;
+
+        @include breakpoint($md) {
+          max-height: 40px;
+          width: auto;
+        }
       }
     }
   }

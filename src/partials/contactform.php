@@ -1,5 +1,4 @@
 <div class="container">
-  <div class="content">
     <?php
     $query = new WP_Query(array('pagename' => 'kontaktformular'));
     if($query -> have_posts()) {
@@ -10,5 +9,4 @@
       wp_reset_query();
     }
     ?>
-  </div>
 </div>

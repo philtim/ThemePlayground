@@ -18,7 +18,7 @@
         <div class="contentWrapper">
           <img src="<?php echo wp_upload_dir()['url'] ?>/price02.png" alt="2. Preis - Drohne">
           <span><strong>2. Preis</strong></span>
-          <span>Drone</span>
+          <span>Jamara Drohne mit Wifi & Full HD Action-Kamera</span>
         </div>
       </div>
 
