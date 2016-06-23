@@ -9,9 +9,7 @@ if($query -> have_posts()) {
     echo the_title();
     echo '</h2>';
 
-    echo '<p class="col">';
-    echo strip_tags( nl2br( get_the_content( '' ) ), "" );
-    echo '</p>';
+    echo the_content();
 
     if (get_field( 'video' )) {
       echo '<div class="videoWrapper">';

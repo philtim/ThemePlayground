@@ -33,7 +33,7 @@ if ( $query->have_posts() ) {
   wp_reset_query();
 }
 
-$mainQuery   = new WP_Query( 'pagename=next-truck-stops' );
+$mainQuery   = new WP_Query( array('pagename' => 'next-truck-stops' ));
 $mainTitle   = '';
 $mainContent = '';
 
