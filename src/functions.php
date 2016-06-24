@@ -119,7 +119,7 @@ function fischertruck_scripts() {
   wp_enqueue_style( 'fischertruck-style', get_stylesheet_uri() );
 
   wp_enqueue_script( 'jQuery', 'https://code.jquery.com/jquery-2.2.4.min.js' );
-  wp_enqueue_script( 'googlemaps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' );
+  wp_enqueue_script( 'googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAfaR5QfdzINSBRLMXyXPXzXOcjmPv8SPU' );
   wp_enqueue_script( 'fastclick', 'https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js' );
   wp_enqueue_script( 'fischertruck-js', get_template_directory_uri() . '/js/main.min.js', array(), '20151215', true );
 

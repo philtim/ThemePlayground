@@ -186,7 +186,6 @@
   // function to setActiveRow
   var setActiveRow = function setActiveRow(id) {
     removeActiveClass();
-    console.log('id is', id);
     $(markerRows[id]).addClass('active');
   };
 

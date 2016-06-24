@@ -302,7 +302,7 @@ gulp.task('copy:fonts', function () {
 });
 
 gulp.task('copy:misc', function () {
-  return gulp.src([pathdir.src + '/*.{png,txt,md}'])
+  return gulp.src([pathdir.src + '/*.{png,txt,md,ico}'])
     .pipe(gulp.dest(pathdir.dist));
 });
 
