@@ -225,7 +225,7 @@ function fischer_posttypes_contest() {
     'capability_type' => 'post',
     'has_archive' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'editor', 'thumbnail')
+    'supports' => array('title', 'thumbnail')
   );
   register_post_type( 'contest', $args );
 }

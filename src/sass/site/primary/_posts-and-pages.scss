@@ -354,6 +354,9 @@ section.truckStops {
 
       .contentWrapper {
         text-align: center;
+        strong {
+          display: block;
+        }
       }
 
       img {
