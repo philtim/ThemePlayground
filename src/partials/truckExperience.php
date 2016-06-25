@@ -31,7 +31,12 @@
           <div class="text / col-xs-12 col-sm-6 <?php if($loopCounter % 2 != 0) echo 'test col-sm-push-6'; ?>">
             <?php the_content() ?>
           </div>
-          <div class="image / col-xs-12 col-sm-6 <?php if($loopCounter % 2 != 0) echo 'col-sm-pull-6' ?>">
+          <div class="image animation-element / col-xs-12 col-sm-6
+          <?php if($loopCounter % 2 != 0) { echo 'slide-from-left col-sm-pull-6'; } else {
+            echo 'slide-from-right';
+          }
+          ?>">
+
             <img src="<?php the_post_thumbnail_url(); ?>" alt="fischer - innovative solutions">
           </div>
         </div>

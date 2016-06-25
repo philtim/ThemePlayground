@@ -4,7 +4,7 @@ if($query -> have_posts()) {
   while ( $query->have_posts() ) {
     $query->the_post();
 
-    echo '<h2 class="col-xs-12">';
+    echo '<h2 class="animation-element scale-up / col-xs-12">';
     echo get_field( 'masthead-subheadline' );
     echo '</h2>';
 

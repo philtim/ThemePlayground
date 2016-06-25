@@ -72,20 +72,84 @@ img {
 
 }
 
-.pattern {
-  background-image: url(raster.png);
-  background-repeat: repeat;
-  background-attachment: scroll;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.animation-element {
+  position: relative;
+}
+
+.bounce-up {
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(.24,.73,.6,.97);
+  transform: translate3d(0px, 200, 0px);
+  backface-visibility: hidden;
 }
 
 
-  .wrap {
-    h1 {
-      color: red;
-    }
+.bounce-up.in-view {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+
+
+.slide-in {
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(.24,.73,.6,.97);
+  transform: translate3d(-100%, 0, 0);
+  backface-visibility: hidden;
+
+  &.in-view {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
+}
+
+.slide-from-left {
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(.24,.73,.6,.97);
+  transform: translate3d(-100%, 0, 0);
+  backface-visibility: hidden;
+
+  &.in-view {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slide-from-right {
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(.24,.73,.6,.97);
+  transform: translate3d(100%, 0, 0);
+  backface-visibility: hidden;
+
+  &.in-view {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+.scale-up {
+  opacity: 0;
+
+  &.in-view {
+    opacity: 1;
+    backface-visibility: hidden;
+    animation: slide .5s ease-in-out;
+  }
+}
+
+@keyframes slide {
+  0%  {
+    transform: translate3d(0px, 50px, 0px);
+  }
+
+  70% {
+    transform: translate3d(0px, -20px, 0px);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}

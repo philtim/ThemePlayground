@@ -74,7 +74,7 @@ if ( $mainQuery->have_posts() ) {
           break;
         }
         ?>
-        <div class="row" data-mapTarget="<?php echo $stop->id ?>">
+        <div class="animation-element slide-in / row" data-mapTarget="<?php echo $stop->id ?>">
           <div class="date / col-sm-2">
             <span class="title">Datum und Uhrzeit</span>
             <div class="content">
