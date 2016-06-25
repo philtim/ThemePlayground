@@ -14,7 +14,7 @@ function fischer_posttypes_masthead() {
   $labels = array(
     'name' => 'Masthead',
     'singular_name' => 'Masthead',
-    'menu_name' => 'Masthead',
+    'menu_name' => 'Truck Masthead',
     'menu_admin_bar' => 'All Mastheads',
     'add_new' => 'Add Masthead',
     'add_new_item' => 'Add Masthead',
@@ -89,7 +89,7 @@ function fischer_posttypes_truckinformation() {
   $labels = array(
     'name' => 'Truckinformation',
     'singular_name' => 'Truckinformation',
-    'menu_name' => 'Truckinformation',
+    'menu_name' => 'Truck Inside',
     'menu_admin_bar' => 'All Truckinformation',
     'add_new' => 'Add Truckinformation',
     'add_new_item' => 'Add Truckinformation',
@@ -126,7 +126,7 @@ function fischer_posttypes_truckexperience() {
   $labels = array(
     'name' => 'Truckexperience',
     'singular_name' => 'Truckexperience',
-    'menu_name' => 'Truckexperience',
+    'menu_name' => 'Truck Experience',
     'menu_admin_bar' => 'All Truckexperience',
     'add_new' => 'Add Truckexperience',
     'add_new_item' => 'Add Truckexperience',
@@ -163,7 +163,7 @@ function fischer_posttypes_socialFeed() {
   $labels = array(
     'name' => 'Socialfeed',
     'singular_name' => 'Socialfeed',
-    'menu_name' => 'Socialfeeds',
+    'menu_name' => 'Impressionen',
     'menu_admin_bar' => 'All Socialfeeds',
     'add_new' => 'Add Socialfeed',
     'add_new_item' => 'Add Socialfeed',
@@ -200,7 +200,7 @@ function fischer_posttypes_contest() {
   $labels = array(
     'name' => 'Contest',
     'singular_name' => 'Contest',
-    'menu_name' => 'Contest',
+    'menu_name' => 'Gewinnspiel',
     'menu_admin_bar' => 'All Contests',
     'add_new' => 'Add Contest',
     'add_new_item' => 'Add Contest',
@@ -225,7 +225,7 @@ function fischer_posttypes_contest() {
     'capability_type' => 'post',
     'has_archive' => true,
     'hierarchical' => false,
-    'supports' => array('title', 'thumbnail')
+    'supports' => array('title', 'editor', 'thumbnail')
   );
   register_post_type( 'contest', $args );
 }

@@ -57,21 +57,30 @@ var smoothScrolling = function smoothScrolling() {
 
 var syncScrolling = function syncScrolling() {
   var sections = $('section');
+  var lastSection = sections.last();
+  var lastSectionOffset = 0;
   var nav = $('#site-navigation');
+  var $navLinks = nav.find('a');
+  var cur_pos = 0;
+  var top = 0;
+  var bottom = 0;
 
   $(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop();
+    cur_pos = $(this).scrollTop();
 
     sections.each(function() {
-      var top = $(this).offset().top - 100,
-        bottom = top + $(this).outerHeight();
+      top = $(this).offset().top - 100;
+      bottom = top + $(this).outerHeight();
+      lastSectionOffset = lastSection.offset().top-(lastSection.height()/1.25);
 
       if (cur_pos >= top && cur_pos <= bottom) {
-        nav.find('a').removeClass('active');
-        sections.removeClass('active');
+        $navLinks.removeClass('active');
 
         $(this).addClass('active');
         nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+      }
+      if(cur_pos >= lastSectionOffset) {
+        $navLinks.removeClass('active').last().addClass('active');
       }
     });
   });

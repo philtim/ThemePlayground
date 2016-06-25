@@ -32,7 +32,7 @@
             <?php the_content() ?>
           </div>
           <div class="image / col-xs-12 col-sm-6 <?php if($loopCounter % 2 != 0) echo 'col-sm-pull-6' ?>">
-            <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+            <img src="<?php the_post_thumbnail_url(); ?>" alt="fischer - innovative solutions">
           </div>
         </div>
 
